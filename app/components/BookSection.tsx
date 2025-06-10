@@ -1,24 +1,64 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function BookSection() {
+	const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+	const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
+	const bookImageRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (bookImageRef.current) {
+				const rect = bookImageRef.current.getBoundingClientRect();
+				const scrollProgress = Math.max(
+					0,
+					Math.min(
+						1,
+						(window.innerHeight - rect.top) / (window.innerHeight + rect.height)
+					)
+				);
+
+				// Parallax très subtil et contrôlé
+				const parallaxValue = (scrollProgress - 0.5) * 20; // Max 10px dans chaque direction
+
+				bookImageRef.current.style.transform = `translateY(${parallaxValue}px)`;
+			}
+		};
+
+		window.addEventListener("scroll", handleScroll, { passive: true });
+		handleScroll(); // Initial call
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
 	return (
-		<section className="bg-white py-20">
+		<section className="bg-gradient-to-b from-snow-white via-snow-white to-morning-mist/20 py-20">
 			<div className="container mx-auto px-4">
-				<h2 className="text-3xl font-serif text-center mb-16 text-anthracite">
+				<h2
+					ref={titleRef as React.RefObject<HTMLHeadingElement>}
+					className={`text-4xl font-serif text-center mb-16 text-mountain-blue font-bold animate-on-scroll ${titleVisible ? "visible" : ""}`}>
 					À propos du livre
 				</h2>
 
-				<div className="flex flex-col lg:flex-row gap-12 items-start max-w-6xl mx-auto">
-					{/* Images du livre */}
+				<div
+					ref={contentRef as React.RefObject<HTMLDivElement>}
+					className={`flex flex-col lg:flex-row gap-12 items-start max-w-6xl mx-auto animate-on-scroll ${contentVisible ? "visible" : ""}`}
+					style={{ animationDelay: "0.2s" }}>
+					{/* Images du livre avec parallax subtil et hover */}
 					<div className="flex-shrink-0 mx-auto lg:mx-0">
-						<div className="shadow-2xl">
+						<div
+							ref={bookImageRef}
+							className="shadow-2xl rounded-lg overflow-hidden transition-all duration-500 hover:shadow-3xl hover:-translate-y-2 hover:rotate-1 group will-change-transform">
 							<Image
 								src="/images/book/ombre-sur-le-lac.webp"
 								alt="Couverture Ombres sur le lac"
 								width={320}
 								height={460}
-								className="w-80 h-auto"
+								sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 320px"
+								style={{ width: "auto", height: "auto" }}
+								className="max-w-80 transition-all duration-500 group-hover:brightness-110"
 							/>
 						</div>
 					</div>
@@ -26,19 +66,19 @@ export default function BookSection() {
 					{/* Résumé du livre */}
 					<div className="flex-1">
 						<div className="prose prose-lg mx-auto lg:mx-0">
-							<p className="text-lg leading-relaxed mb-6">
+							<p className="text-lg leading-relaxed mb-6 text-mountain-blue">
 								Au cœur des illuminations des feux d'artifice de la Fête du lac
 								d'Annecy, un drame prend forme en silence : Bruno, pilier de la
 								communauté pastorale locale, disparaît dans l'obscurité laissant
 								derrière lui un mystère opaque.
 							</p>
-							<p className="text-lg leading-relaxed mb-6">
+							<p className="text-lg leading-relaxed mb-6 text-mountain-blue">
 								Des rumeurs évoquent une dispute houleuse avec Damien, un ami
 								d'enfance devenu un rival. Quand le luxueux véhicule de ce
 								dernier démarre en trombe à l'annonce de la disparition, les
 								soupçons s'intensifient.
 							</p>
-							<p className="text-lg leading-relaxed mb-6">
+							<p className="text-lg leading-relaxed mb-6 text-mountain-blue">
 								Qui aurait eu des raisons de s'attaquer à cet homme intègre ?
 								Entre apparences trompeuses et tensions exacerbées, Maxime
 								Ebner, commandant du B.S.D.A.S en charge de l'enquête, se
@@ -46,22 +86,26 @@ export default function BookSection() {
 								insaisissable.
 							</p>
 
-							{/* Prix et infos */}
-							<div className="bg-gray-50 p-6 rounded-lg mt-8">
+							{/* Prix et infos avec design amélioré */}
+							<div className="bg-gradient-to-r from-morning-mist/50 to-lake-turquoise/30 p-6 rounded-xl mt-8 border border-lake-turquoise/50 card-hover">
 								<div className="flex justify-between items-center">
 									<div>
-										<p className="text-2xl font-bold text-brick">8,40 €</p>
-										<p className="text-sm text-gray-600">TTC FRANCE</p>
-										<p className="text-sm text-gray-600 mt-2">
+										<p className="text-3xl font-bold text-sunset-orange">
+											8,40 €
+										</p>
+										<p className="text-sm text-mountain-blue font-medium">
+											TTC FRANCE
+										</p>
+										<p className="text-sm text-stone-gray mt-2">
 											ISBN 979-1-041-54523-0
 										</p>
 									</div>
 									<div className="text-right">
-										<p className="font-semibold text-anthracite">
+										<p className="font-bold text-mountain-blue text-lg">
 											ROMAN POLICIER
 										</p>
-										<p className="text-sm text-gray-600">
-											Sortie prévue : printemps 2025
+										<p className="text-sm text-stone-gray">
+											Sortie prévue : fin 2025
 										</p>
 									</div>
 								</div>

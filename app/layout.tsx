@@ -3,17 +3,18 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	title: {
-		default: "Xavier Aymeric Frey - Auteur",
-		template: "%s | Xavier Aymeric Frey",
-	},
+	title: 'Xavier Aymeric Frey - Auteur de "Ombres sur le lac"',
 	description:
-		"Découvrez l'univers de Xavier Aymeric Frey, auteur du roman 'Ombres sur le lac'.",
-	metadataBase: new URL("https://xavieraymericfrey.fr"),
+		'Découvrez le premier roman de Xavier Aymeric Frey, "Ombres sur le lac". Un thriller policier captivant qui explore les thèmes du pardon, de la colère et de la rancune.',
+	metadataBase: new URL("https://xavieraymericfrey.vercel.app"),
 	openGraph: {
 		type: "website",
 		locale: "fr_FR",
 		siteName: "Xavier Aymeric Frey",
+		title: 'Xavier Aymeric Frey - Auteur de "Ombres sur le lac"',
+		description:
+			'Découvrez le premier roman de Xavier Aymeric Frey, "Ombres sur le lac".',
+		images: ["/og-image.jpg"],
 	},
 };
 

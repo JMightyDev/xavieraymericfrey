@@ -11,9 +11,11 @@ Le formulaire de contact fonctionne mais simule uniquement l'envoi d'email. Les 
 1. Créer un compte sur [resend.com](https://resend.com)
 2. Installer le package : `npm install resend`
 3. Ajouter la clé API dans `.env.local` :
-   ```
+
+   ```text
    RESEND_API_KEY=re_xxxxxxxxx
    ```
+
 4. Décommenter et adapter le code dans `app/api/contact/route.ts`
 
 ### Option 2: SendGrid
