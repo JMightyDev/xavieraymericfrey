@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+	/* Couleurs personnalisées */
+	--color-brick: #a45a52;
+	--color-anthracite: #2a2a2a;
+
+	/* Polices personnalisées */
+	--font-serif: "Playfair Display", "serif";
+	--font-sans: "Inter", "sans-serif";
+}
