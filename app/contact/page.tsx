@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../components/Footer";
+import ContactForm from "../components/ContactForm";
 
 export const metadata = {
 	title: "Contact - Xavier Aymeric Frey",
@@ -15,58 +16,7 @@ export default function Contact() {
 						Contact
 					</h1>
 
-					<div className="max-w-2xl mx-auto">
-						<form className="space-y-6">
-							<div>
-								<label
-									htmlFor="name"
-									className="block text-sm font-medium text-gray-700 mb-1">
-									Nom
-								</label>
-								<input
-									type="text"
-									id="name"
-									name="name"
-									className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brick focus:border-brick"
-								/>
-							</div>
-
-							<div>
-								<label
-									htmlFor="email"
-									className="block text-sm font-medium text-gray-700 mb-1">
-									Email
-								</label>
-								<input
-									type="email"
-									id="email"
-									name="email"
-									className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brick focus:border-brick"
-								/>
-							</div>
-
-							<div>
-								<label
-									htmlFor="message"
-									className="block text-sm font-medium text-gray-700 mb-1">
-									Message
-								</label>
-								<textarea
-									id="message"
-									name="message"
-									rows={6}
-									className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brick focus:border-brick"></textarea>
-							</div>
-
-							<div>
-								<button
-									type="submit"
-									className="w-full bg-brick hover:bg-brick/90 text-white px-6 py-3 rounded-md transition">
-									Envoyer
-								</button>
-							</div>
-						</form>
-					</div>
+					<ContactForm />
 				</div>
 			</main>
 			<Footer />
