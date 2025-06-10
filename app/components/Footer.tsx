@@ -55,16 +55,18 @@ export default function Footer() {
 
 					<div>
 						<h3 className="text-xl font-serif mb-4">Newsletter</h3>
-						<p className="mb-4">Restez informé des dernières actualités</p>
-						<form className="flex gap-2">
+						<p className="mb-4 text-sm">
+							Restez informé des dernières actualités
+						</p>
+						<form className="flex flex-col sm:flex-row gap-2">
 							<input
 								type="email"
 								placeholder="Votre email"
-								className="px-4 py-2 rounded-md bg-white/10 text-white placeholder-gray-400 flex-1"
+								className="px-3 py-2 rounded-md bg-white/10 text-white placeholder-gray-400 flex-1 text-sm"
 							/>
 							<button
 								type="submit"
-								className="bg-brick hover:bg-brick/90 px-4 py-2 rounded-md transition">
+								className="bg-brick hover:bg-brick/90 px-4 py-2 rounded-md transition text-sm font-medium whitespace-nowrap">
 								S'inscrire
 							</button>
 						</form>
