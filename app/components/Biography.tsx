@@ -3,10 +3,12 @@
 import React from "react";
 import Image from "next/image";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { usePageTransition } from "../hooks/usePageTransition";
 
 export default function Biography() {
 	const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
 	const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
+	const { navigateWithTransition } = usePageTransition();
 
 	return (
 		<section className="bg-gradient-to-b from-lake-blue/20 via-snow-white to-morning-mist/30 py-20">
@@ -21,12 +23,14 @@ export default function Biography() {
 					ref={contentRef as React.RefObject<HTMLDivElement>}
 					className={`flex flex-col lg:flex-row gap-12 items-start max-w-6xl mx-auto animate-on-scroll ${contentVisible ? "visible" : ""}`}
 					style={{ animationDelay: "0.2s" }}>
-					{/* Image de l'auteur */}
+					{/* Image de l'auteur - cliquable */}
 					<div className="flex-shrink-0 mx-auto lg:mx-0">
-						<div className="card-hover">
+						<div
+							onClick={() => navigateWithTransition("/boutique")}
+							className="card-hover cursor-pointer hover:scale-105 transition-all duration-300">
 							<Image
 								src="/images/hero/livre-cover.png"
-								alt="Xavier Aymeric Frey - Quatrième de couverture"
+								alt="Xavier Aymeric Frey - Quatrième de couverture - Cliquez pour commander"
 								width={320}
 								height={460}
 								sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 320px"
@@ -60,16 +64,16 @@ export default function Biography() {
 									dépeints dans cette histoire.
 								</p>
 
-								{/* Signature avec effet hover */}
-								<div className="mt-12 text-center lg:text-left">
-									<div className="card-hover inline-block">
+								{/* Signature avec effet hover amélioré */}
+								<div className="mt-12 text-center">
+									<div className="inline-block transition-all duration-500 hover:scale-125 hover:rotate-1 cursor-pointer">
 										<Image
 											src="/images/hero/signature-finale.png"
 											alt="Signature Xavier Aymeric Frey"
 											width={200}
 											height={80}
 											sizes="200px"
-											className="opacity-80 hover:opacity-100 transition-opacity duration-300"
+											className="opacity-80 hover:opacity-100 transition-all duration-500 hover:drop-shadow-lg"
 										/>
 									</div>
 								</div>

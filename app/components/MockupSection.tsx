@@ -25,10 +25,12 @@ export default function MockupSection() {
 						ref={imageRef as React.RefObject<HTMLDivElement>}
 						className={`relative animate-on-scroll ${imageVisible ? "visible" : ""}`}
 						style={{ animationDelay: "0.2s" }}>
-						<div className="card-hover">
+						<div
+							onClick={() => navigateWithTransition("/boutique")}
+							className="card-hover cursor-pointer hover:scale-102 hover:shadow-2xl transition-all duration-300">
 							<Image
 								src="/images/book/mockup-livre.png"
-								alt="Mockup Ombres sur le lac"
+								alt="Mockup Ombres sur le lac - Cliquez pour commander"
 								width={800}
 								height={600}
 								sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px"

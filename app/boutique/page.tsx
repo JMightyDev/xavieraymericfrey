@@ -20,7 +20,7 @@ export default function Shop() {
 						<p className="text-xl text-gray-600 mb-8">
 							La boutique sera bientôt disponible.
 						</p>
-						<p className="text-lg text-brick">Sortie prévue : fin 2025</p>
+						<p className="text-lg text-brick">Sortie prévue : été 2025</p>
 					</div>
 				</div>
 			</main>
