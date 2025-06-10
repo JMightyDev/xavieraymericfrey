@@ -1,10 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: NextRequest) {
 	try {
+		// Vérification de la clé API
+		if (!process.env.RESEND_API_KEY) {
+			console.error(
+				"RESEND_API_KEY manquante dans les variables d'environnement"
+			);
+			return NextResponse.json(
+				{ error: "Configuration email manquante. Contactez l'administrateur." },
+				{ status: 500 }
+			);
+		}
+
+		const resend = new Resend(process.env.RESEND_API_KEY);
+
 		const { name, email, message } = await request.json();
 
 		// Validation des données
