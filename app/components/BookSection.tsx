@@ -34,7 +34,9 @@ export default function BookSection() {
 	}, []);
 
 	return (
-		<section className="bg-gradient-to-b from-snow-white via-snow-white to-morning-mist/20 py-20">
+		<section
+			data-section="book-about"
+			className="bg-gradient-to-b from-snow-white via-snow-white to-morning-mist/20 py-20">
 			<div className="container mx-auto px-4">
 				<h2
 					ref={titleRef as React.RefObject<HTMLHeadingElement>}

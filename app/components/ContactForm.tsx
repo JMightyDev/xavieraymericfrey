@@ -129,7 +129,7 @@ export default function ContactForm() {
 					<button
 						type="submit"
 						disabled={isLoading}
-						className="w-full bg-brick hover:bg-brick/90 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-6 py-3 rounded-md transition">
+						className="w-full bg-brick hover:bg-brick/90 disabled:bg-gray-400 disabled:cursor-not-allowed cursor-pointer text-white px-6 py-3 rounded-md transition">
 						{isLoading ? "Envoi en cours..." : "Envoyer"}
 					</button>
 				</div>

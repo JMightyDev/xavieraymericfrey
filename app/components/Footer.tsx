@@ -37,17 +37,17 @@ export default function Footer() {
 						<div className="space-y-2">
 							<Link
 								href="/"
-								className="block text-morning-mist hover:text-lake-turquoise transition-colors duration-300">
+								className="block text-morning-mist hover:text-lake-turquoise transition-colors duration-300 cursor-pointer">
 								Accueil
 							</Link>
 							<Link
 								href="/boutique"
-								className="block text-morning-mist hover:text-lake-turquoise transition-colors duration-300">
+								className="block text-morning-mist hover:text-lake-turquoise transition-colors duration-300 cursor-pointer">
 								Boutique
 							</Link>
 							<Link
 								href="/contact"
-								className="block text-morning-mist hover:text-lake-turquoise transition-colors duration-300">
+								className="block text-morning-mist hover:text-lake-turquoise transition-colors duration-300 cursor-pointer">
 								Contact
 							</Link>
 						</div>
@@ -61,7 +61,7 @@ export default function Footer() {
 						<div className="flex flex-col space-y-3">
 							<Link
 								href="#"
-								className="flex items-center space-x-3 text-morning-mist hover:text-sunset-orange transition-colors duration-300 group">
+								className="flex items-center space-x-3 text-morning-mist hover:text-sunset-orange transition-colors duration-300 group cursor-pointer">
 								<svg
 									className="w-5 h-5 transition-transform duration-300 group-hover:scale-110"
 									fill="currentColor"
@@ -72,7 +72,7 @@ export default function Footer() {
 							</Link>
 							<Link
 								href="#"
-								className="flex items-center space-x-3 text-morning-mist hover:text-sunset-orange transition-colors duration-300 group">
+								className="flex items-center space-x-3 text-morning-mist hover:text-sunset-orange transition-colors duration-300 group cursor-pointer">
 								<svg
 									className="w-5 h-5 transition-transform duration-300 group-hover:scale-110"
 									fill="currentColor"
@@ -83,7 +83,7 @@ export default function Footer() {
 							</Link>
 							<Link
 								href="#"
-								className="flex items-center space-x-3 text-morning-mist hover:text-sunset-orange transition-colors duration-300 group">
+								className="flex items-center space-x-3 text-morning-mist hover:text-sunset-orange transition-colors duration-300 group cursor-pointer">
 								<svg
 									className="w-5 h-5 transition-transform duration-300 group-hover:scale-110"
 									fill="currentColor"
@@ -118,7 +118,7 @@ export default function Footer() {
 							<button
 								type="submit"
 								disabled={isSubmitting}
-								className="px-4 py-2 text-sm bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white rounded button-hover disabled:opacity-50 disabled:cursor-not-allowed font-medium">
+								className="px-4 py-2 text-sm bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white rounded button-hover disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer font-medium">
 								{isSubmitting ? "..." : "S'inscrire"}
 							</button>
 						</form>

@@ -46,10 +46,24 @@ export default function MockupSection() {
 						</p>
 
 						<div className="flex gap-6 justify-center flex-wrap">
-							<button className="bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white px-8 py-3 rounded-md button-hover shadow-lg font-medium">
+							<button
+								onClick={() => (window.location.href = "/boutique")}
+								className="bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white px-8 py-3 rounded-md button-hover shadow-lg font-medium cursor-pointer">
 								Pré-commander
 							</button>
-							<button className="border-2 border-lake-blue hover:bg-lake-blue/10 hover:border-lake-turquoise text-lake-blue hover:text-lake-turquoise px-8 py-3 rounded-md button-hover font-medium">
+							<button
+								onClick={() => {
+									const bookSection = document.querySelector(
+										'[data-section="book-about"]'
+									);
+									if (bookSection) {
+										bookSection.scrollIntoView({
+											behavior: "smooth",
+											block: "start",
+										});
+									}
+								}}
+								className="border-2 border-lake-blue hover:bg-lake-blue/10 hover:border-lake-turquoise text-lake-blue hover:text-lake-turquoise px-8 py-3 rounded-md button-hover font-medium cursor-pointer">
 								En savoir plus
 							</button>
 						</div>

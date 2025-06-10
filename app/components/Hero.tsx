@@ -73,12 +73,12 @@ export default function Hero() {
 						<div className="flex gap-6 justify-center lg:justify-start flex-wrap">
 							<Link
 								href="/boutique"
-								className="bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white px-8 py-3 rounded-md button-hover shadow-lg">
+								className="bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white px-8 py-3 rounded-md button-hover shadow-lg cursor-pointer">
 								Commander
 							</Link>
 							<Link
 								href="/contact"
-								className="border-2 border-morning-mist hover:bg-morning-mist/20 hover:border-lake-turquoise text-morning-mist hover:text-white px-8 py-3 rounded-md button-hover">
+								className="border-2 border-morning-mist hover:bg-morning-mist/20 hover:border-lake-turquoise text-morning-mist hover:text-white px-8 py-3 rounded-md button-hover cursor-pointer">
 								Contact
 							</Link>
 						</div>
