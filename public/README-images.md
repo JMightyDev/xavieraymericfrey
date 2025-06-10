@@ -2,7 +2,7 @@
 
 ## Structure des dossiers
 
-```
+```text
 public/
 ├── images/
 │   ├── hero/
@@ -22,7 +22,7 @@ public/
     ├── instagram.svg
     ├── youtube.svg
     └── tiktok.svg
-```
+```text
 
 ## Comment utiliser
 
@@ -32,12 +32,12 @@ Dans vos composants React :
 import Image from "next/image";
 
 <Image
-	src="/images/hero/xavier-portrait.png"
-	alt="Xavier Aymeric Frey"
-	width={400}
-	height={400}
+    src="/images/hero/xavier-portrait.png"
+    alt="Xavier Aymeric Frey"
+    width={400}
+    height={400}
 />;
-```
+```text
 
 ## Formats recommandés
 
