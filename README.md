@@ -87,7 +87,7 @@ Pour modifier le contenu :
 
 ## 📞 Support
 
-Pour toute question ou problème, contactez [votre-email@example.com]
+Pour toute question ou problème, contactez [contact@jmighty.fr]
 
 ---
 
