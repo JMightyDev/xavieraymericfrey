@@ -98,6 +98,65 @@
 	transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* Transitions fluides entre les pages - effet doux et élégant */
+@supports (view-transition-name: root) {
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation-duration: 0.5s;
+		animation-timing-function: ease-in-out;
+	}
+
+	::view-transition-old(root) {
+		animation-name: fade-out;
+	}
+
+	::view-transition-new(root) {
+		animation-name: fade-in;
+	}
+}
+
+@keyframes fade-out {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(0.98);
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+		transform: scale(1.02);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* Fallback pour les navigateurs qui ne supportent pas view-transition */
+body {
+	transition:
+		opacity 0.5s ease-in-out,
+		transform 0.5s ease-in-out;
+}
+
+.page-transition-enter {
+	opacity: 0;
+	transform: scale(1.02);
+}
+
+.page-transition-enter-active {
+	opacity: 1;
+	transform: scale(1);
+	transition:
+		opacity 0.5s ease-in-out,
+		transform 0.5s ease-in-out;
+}
+
 .card-hover:hover {
 	transform: translateY(-8px) scale(1.02);
 	box-shadow: 0 20px 40px rgba(44, 95, 124, 0.3);

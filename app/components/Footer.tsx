@@ -2,11 +2,13 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePageTransition } from "../hooks/usePageTransition";
 
 export default function Footer() {
 	const [email, setEmail] = useState("");
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [message, setMessage] = useState("");
+	const { navigateWithTransition } = usePageTransition();
 
 	const handleNewsletterSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
@@ -35,21 +37,21 @@ export default function Footer() {
 							Navigation
 						</h3>
 						<div className="space-y-2">
-							<Link
-								href="/"
-								className="block text-morning-mist hover:text-lake-turquoise transition-colors duration-300 cursor-pointer">
+							<button
+								onClick={() => navigateWithTransition("/")}
+								className="block text-left text-morning-mist hover:text-lake-turquoise transition-colors duration-300 cursor-pointer">
 								Accueil
-							</Link>
-							<Link
-								href="/boutique"
-								className="block text-morning-mist hover:text-lake-turquoise transition-colors duration-300 cursor-pointer">
+							</button>
+							<button
+								onClick={() => navigateWithTransition("/boutique")}
+								className="block text-left text-morning-mist hover:text-lake-turquoise transition-colors duration-300 cursor-pointer">
 								Boutique
-							</Link>
-							<Link
-								href="/contact"
-								className="block text-morning-mist hover:text-lake-turquoise transition-colors duration-300 cursor-pointer">
+							</button>
+							<button
+								onClick={() => navigateWithTransition("/contact")}
+								className="block text-left text-morning-mist hover:text-lake-turquoise transition-colors duration-300 cursor-pointer">
 								Contact
-							</Link>
+							</button>
 						</div>
 					</div>
 

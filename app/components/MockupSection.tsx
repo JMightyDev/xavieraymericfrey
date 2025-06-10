@@ -3,11 +3,13 @@
 import React from "react";
 import Image from "next/image";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { usePageTransition } from "../hooks/usePageTransition";
 
 export default function MockupSection() {
 	const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
 	const { ref: imageRef, isVisible: imageVisible } = useScrollAnimation();
 	const { ref: textRef, isVisible: textVisible } = useScrollAnimation();
+	const { navigateWithTransition } = usePageTransition();
 
 	return (
 		<section className="bg-gradient-to-b from-snow-white via-morning-mist/20 to-lake-blue/10 py-20">
@@ -47,7 +49,7 @@ export default function MockupSection() {
 
 						<div className="flex gap-6 justify-center flex-wrap">
 							<button
-								onClick={() => (window.location.href = "/boutique")}
+								onClick={() => navigateWithTransition("/boutique")}
 								className="bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white px-8 py-3 rounded-md button-hover shadow-lg font-medium cursor-pointer">
 								Pré-commander
 							</button>
