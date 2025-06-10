@@ -15,7 +15,7 @@ export default function MockupSection() {
 				<h2
 					ref={titleRef as React.RefObject<HTMLHeadingElement>}
 					className={`text-4xl font-serif text-center mb-16 text-mountain-blue animate-on-scroll ${titleVisible ? "visible" : ""}`}>
-					Le livre en situation
+					Plongez dans l'intrigue
 				</h2>
 
 				<div className="max-w-4xl mx-auto text-center">
