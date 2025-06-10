@@ -52,7 +52,8 @@ export default function Hero() {
 								alt="Xavier Aymeric Frey"
 								fill
 								sizes="(max-width: 768px) 256px, 320px"
-								className="object-cover"
+								className="object-cover object-center scale-110"
+								style={{ objectPosition: "center 20%" }}
 								priority
 							/>
 						</div>
