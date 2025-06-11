@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
 	title: 'Xavier Aymeric Frey - Auteur de "Ombres sur le lac"',
 	description:
-		'Découvrez le premier roman de Xavier Aymeric Frey, "Ombres sur le lac". Un thriller policier captivant qui explore les thèmes du pardon, de la colère et de la rancune.',
+		'Découvrez le premier roman de Xavier Aymeric Frey, "Ombres sur le lac". Un thriller policier captivant où Bruno disparaît mystérieusement lors de la fête du lac d\'Annecy.',
 	metadataBase: new URL("https://xavieraymericfrey.vercel.app"),
 	openGraph: {
 		type: "website",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 		siteName: "Xavier Aymeric Frey",
 		title: 'Xavier Aymeric Frey - Auteur de "Ombres sur le lac"',
 		description:
-			'Découvrez le premier roman de Xavier Aymeric Frey, "Ombres sur le lac".',
+			'Découvrez le premier roman de Xavier Aymeric Frey, "Ombres sur le lac". Un thriller policier captivant qui se déroule lors de la fête du lac d\'Annecy.',
 		images: ["/og-image.jpg"],
 	},
 };

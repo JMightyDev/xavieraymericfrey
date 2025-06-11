@@ -9,22 +9,33 @@ export function usePageTransition() {
 
 	const navigateWithTransition = useCallback(
 		(href: string) => {
+			// Si c'est la même page, ne pas naviguer
+			if (typeof window !== "undefined" && window.location.pathname === href) {
+				return;
+			}
+
+			setIsTransitioning(true);
+
+			// Utilise la View Transition API native si disponible (Chrome 111+)
 			if (typeof window !== "undefined" && "startViewTransition" in document) {
-				// @ts-ignore - View Transition API est expérimentale
+				// @ts-ignore - View Transition API
 				document.startViewTransition(() => {
 					router.push(href);
+					setIsTransitioning(false);
 				});
 			} else {
-				// Fallback avec animation CSS douce
-				setIsTransitioning(true);
-				document.body.style.opacity = "0.7";
-				document.body.style.transform = "scale(0.98)";
-				document.body.style.transition =
-					"opacity 0.3s ease-in-out, transform 0.3s ease-in-out";
+				// Fallback : transition très subtile sans décalage
+				document.documentElement.style.setProperty("--page-transition", "true");
 
 				setTimeout(() => {
 					router.push(href);
-				}, 250);
+					setIsTransitioning(false);
+
+					// Reset après la navigation
+					setTimeout(() => {
+						document.documentElement.style.removeProperty("--page-transition");
+					}, 100);
+				}, 50);
 			}
 		},
 		[router]

@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useEffect } from "react";
+import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Quote from "./components/Quote";
 import BookSection from "./components/BookSection";
 import MockupSection from "./components/MockupSection";
-import Biography from "./components/Biography";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -50,13 +50,15 @@ export default function Home() {
 	}, []);
 
 	return (
-		<main>
-			<Hero />
-			<Quote />
-			<BookSection />
-			<MockupSection />
-			<Biography />
+		<div>
+			<Header />
+			<main>
+				<Hero />
+				<Quote />
+				<BookSection />
+				<MockupSection />
+			</main>
 			<Footer />
-		</main>
+		</div>
 	);
 }

@@ -72,23 +72,25 @@ export default function BookSection() {
 					<div className="flex-1">
 						<div className="prose prose-lg mx-auto lg:mx-0">
 							<p className="text-lg leading-relaxed mb-6 text-mountain-blue">
-								Au cœur des illuminations des feux d'artifice de la Fête du lac
-								d'Annecy, un drame prend forme en silence : Bruno, pilier de la
-								communauté pastorale locale, disparaît dans l'obscurité laissant
-								derrière lui un mystère opaque.
+								Annecy, soir de la célèbre fête du lac. Sous un ciel illuminé
+								par les feux d'artifice, Bruno, figure locale respectée,
+								disparaît mystérieusement devant 40 000 spectateurs. Rapidement,
+								l'inquiétude laisse place aux soupçons : une violente dispute
+								avec Damien, son ancien ami devenu rival, intrigue les
+								enquêteurs.
 							</p>
 							<p className="text-lg leading-relaxed mb-6 text-mountain-blue">
-								Des rumeurs évoquent une dispute houleuse avec Damien, un ami
-								d'enfance devenu un rival. Quand le luxueux véhicule de ce
-								dernier démarre en trombe à l'annonce de la disparition, les
-								soupçons s'intensifient.
+								Mais à mesure que les témoignages se multiplient, le doute
+								grandit. Les pistes s'embrouillent, les mensonges surgissent,
+								les apparences deviennent trompeuses.
 							</p>
 							<p className="text-lg leading-relaxed mb-6 text-mountain-blue">
-								Qui aurait eu des raisons de s'attaquer à cet homme intègre ?
-								Entre apparences trompeuses et tensions exacerbées, Maxime
-								Ebner, commandant du B.S.D.A.S en charge de l'enquête, se
-								retrouve plongé dans un jeu dangereux où la vérité semble
-								insaisissable.
+								Bruno est-il vraiment la victime que tout le monde imagine, ou
+								bien détient-il lui-même les clés du mystère ?
+							</p>
+							<p className="text-lg leading-relaxed mb-6 text-mountain-blue italic">
+								Entre secrets bien gardés et révélations inattendues, plongez
+								dans une enquête haletante où personne n'est vraiment innocent.
 							</p>
 
 							{/* Prix et infos avec design amélioré - cliquable */}
@@ -98,7 +100,7 @@ export default function BookSection() {
 								<div className="flex justify-between items-center">
 									<div>
 										<p className="text-3xl font-bold text-sunset-orange">
-											8,40 €
+											11,50 €
 										</p>
 										<p className="text-sm text-mountain-blue font-medium">
 											TTC FRANCE

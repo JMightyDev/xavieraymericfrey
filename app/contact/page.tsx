@@ -1,12 +1,14 @@
 "use client";
 
 import React from "react";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 
 export default function Contact() {
 	return (
 		<div>
+			<Header />
 			<style jsx>{`
 				@keyframes fadeInUp {
 					from {
@@ -34,7 +36,8 @@ export default function Contact() {
 						<p className="text-xl md:text-2xl text-morning-mist max-w-2xl mx-auto leading-relaxed animate-on-scroll">
 							Vous avez une question sur "Ombres sur le lac" ? Vous souhaitez
 							organiser une rencontre ou une séance de dédicace ? N'hésitez pas
-							à me contacter.
+							à me contacter. Disponible pour tous échanges autour de ce
+							thriller qui se déroule à Annecy.
 						</p>
 					</div>
 				</section>
