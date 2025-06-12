@@ -36,8 +36,7 @@ export default function Contact() {
 						<p className="text-xl md:text-2xl text-morning-mist max-w-2xl mx-auto leading-relaxed animate-on-scroll">
 							Vous avez une question sur "Ombres sur le lac" ? Vous souhaitez
 							organiser une rencontre ou une séance de dédicace ? N'hésitez pas
-							à me contacter. Disponible pour tous échanges autour de ce
-							thriller qui se déroule à Annecy.
+							à me contacter.
 						</p>
 					</div>
 				</section>

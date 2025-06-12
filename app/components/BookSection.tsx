@@ -48,10 +48,10 @@ export default function BookSection() {
 
 				<div
 					ref={contentRef as React.RefObject<HTMLDivElement>}
-					className={`flex flex-col lg:flex-row gap-12 items-start max-w-6xl mx-auto animate-on-scroll ${contentVisible ? "visible" : ""}`}
+					className={`flex flex-col lg:flex-row gap-16 items-start max-w-6xl mx-auto animate-on-scroll ${contentVisible ? "visible" : ""}`}
 					style={{ animationDelay: "0.2s" }}>
 					{/* Images du livre avec parallax subtil et hover - cliquable */}
-					<div className="flex-shrink-0 mx-auto lg:mx-0">
+					<div className="flex-shrink-0 mx-auto lg:mx-0 lg:sticky lg:top-8">
 						<div
 							ref={bookImageRef}
 							onClick={() => navigateWithTransition("/boutique")}
@@ -70,60 +70,41 @@ export default function BookSection() {
 
 					{/* Résumé du livre */}
 					<div className="flex-1">
-						<div className="prose prose-lg mx-auto lg:mx-0">
-							<p className="text-lg leading-relaxed mb-6 text-mountain-blue">
-								Annecy, soir de la célèbre fête du lac. Sous un ciel illuminé
-								par les feux d'artifice, Bruno, figure locale respectée,
-								disparaît mystérieusement devant 40 000 spectateurs. Rapidement,
-								l'inquiétude laisse place aux soupçons : une violente dispute
-								avec Damien, son ancien ami devenu rival, intrigue les
-								enquêteurs.
-							</p>
-							<p className="text-lg leading-relaxed mb-6 text-mountain-blue">
-								Mais à mesure que les témoignages se multiplient, le doute
-								grandit. Les pistes s'embrouillent, les mensonges surgissent,
-								les apparences deviennent trompeuses.
-							</p>
-							<p className="text-lg leading-relaxed mb-6 text-mountain-blue">
-								Bruno est-il vraiment la victime que tout le monde imagine, ou
-								bien détient-il lui-même les clés du mystère ?
-							</p>
-							<p className="text-lg leading-relaxed mb-6 text-mountain-blue italic">
-								Entre secrets bien gardés et révélations inattendues, plongez
-								dans une enquête haletante où personne n'est vraiment innocent.
-							</p>
+						<div className="prose prose-lg mx-auto lg:mx-0 bg-white/50 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-morning-mist/30">
+							<div className="space-y-6">
+								<p className="text-lg leading-relaxed text-mountain-blue">
+									Annecy, soir de la célèbre fête du lac. Sous un ciel illuminé
+									par les feux d'artifice, Bruno, figure locale respectée,
+									disparaît mystérieusement devant 40 000 spectateurs.
+									Rapidement, l'inquiétude laisse place aux soupçons : une
+									violente dispute avec Damien, son ancien ami devenu rival,
+									intrigue les enquêteurs.
+								</p>
+								<p className="text-lg leading-relaxed text-mountain-blue">
+									Mais à mesure que les témoignages se multiplient, le doute
+									grandit. Les pistes s'embrouillent, les mensonges surgissent,
+									les apparences deviennent trompeuses.
+								</p>
+								<p className="text-lg leading-relaxed text-mountain-blue">
+									Bruno est-il vraiment la victime que tout le monde imagine, ou
+									bien détient-il lui-même les clés du mystère ?
+								</p>
+								<p className="text-lg leading-relaxed text-mountain-blue italic border-l-4 border-sunset-orange pl-6">
+									Entre secrets bien gardés et révélations inattendues, plongez
+									dans une enquête haletante où personne n'est vraiment
+									innocent.
+								</p>
+							</div>
 
-							{/* Prix et infos avec design amélioré - cliquable */}
-							<div
-								onClick={() => navigateWithTransition("/boutique")}
-								className="bg-gradient-to-r from-morning-mist/50 to-lake-turquoise/30 p-6 rounded-xl mt-8 border border-lake-turquoise/50 card-hover cursor-pointer hover:shadow-xl hover:scale-102 hover:border-lake-turquoise/70 transition-all duration-300">
-								<div className="flex justify-between items-center">
-									<div>
-										<p className="text-3xl font-bold text-sunset-orange">
-											11,50 €
-										</p>
-										<p className="text-sm text-mountain-blue font-medium">
-											TTC FRANCE
-										</p>
-										<p className="text-sm text-stone-gray mt-2">
-											ISBN 979-1-041-54523-0
-										</p>
-									</div>
-									<div className="text-right">
-										<p className="font-bold text-mountain-blue text-lg">
-											ROMAN POLICIER
-										</p>
-										<p className="text-sm text-stone-gray">
-											Sortie prévue : été 2025
-										</p>
-									</div>
-								</div>
-								{/* Indication visuelle pour montrer que c'est cliquable */}
-								<div className="mt-3 text-center">
-									<p className="text-xs text-mountain-blue/70 italic">
-										Cliquez pour pré-commander
-									</p>
-								</div>
+							<div className="mt-8 text-center">
+								<button
+									onClick={(e) => {
+										e.stopPropagation();
+										navigateWithTransition("/boutique");
+									}}
+									className="bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white px-12 py-4 rounded-md button-hover shadow-lg font-medium text-lg cursor-pointer">
+									Découvrir le livre
+								</button>
 							</div>
 						</div>
 					</div>

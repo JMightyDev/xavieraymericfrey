@@ -82,7 +82,7 @@ export default function MockupSection() {
 									</div>
 									<button
 										onClick={() => navigateWithTransition("/boutique")}
-										className="bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white px-6 py-2 rounded-lg transition-all duration-200 hover:scale-105 cursor-pointer text-sm font-medium">
+										className="bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white px-6 py-2 rounded-md button-hover shadow-lg text-sm font-medium cursor-pointer">
 										Lire la suite
 									</button>
 								</div>

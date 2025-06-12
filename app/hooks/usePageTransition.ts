@@ -24,8 +24,9 @@ export function usePageTransition() {
 					setIsTransitioning(false);
 				});
 			} else {
-				// Fallback : transition très subtile sans décalage
-				document.documentElement.style.setProperty("--page-transition", "true");
+				// Fallback : transition douce avec fade simple
+				document.body.style.opacity = "0";
+				document.body.style.transition = "opacity 0.3s ease-in-out";
 
 				setTimeout(() => {
 					router.push(href);
@@ -33,9 +34,13 @@ export function usePageTransition() {
 
 					// Reset après la navigation
 					setTimeout(() => {
-						document.documentElement.style.removeProperty("--page-transition");
-					}, 100);
-				}, 50);
+						document.body.style.opacity = "1";
+						setTimeout(() => {
+							document.body.style.removeProperty("transition");
+							document.body.style.removeProperty("opacity");
+						}, 300);
+					}, 50);
+				}, 300);
 			}
 		},
 		[router]

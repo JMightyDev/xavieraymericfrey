@@ -21,6 +21,45 @@
 	--font-sans: "Inter", "sans-serif";
 }
 
+/* Animations de transition de page */
+@keyframes fadeInOut {
+	0% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes progress {
+	0% {
+		width: 0;
+	}
+	20% {
+		width: 0;
+	}
+	80% {
+		width: 100%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+.animate-fade-in-out {
+	animation: fadeInOut 0.7s ease-in-out forwards;
+}
+
+.animate-progress {
+	animation: progress 0.7s ease-in-out forwards;
+}
+
 /* Animations fade-in au scroll */
 @keyframes fadeInUp {
 	from {
@@ -102,41 +141,41 @@
 @supports (view-transition-name: root) {
 	::view-transition-old(root),
 	::view-transition-new(root) {
-		animation-duration: 0.25s;
-		animation-timing-function: ease-out;
+		animation-duration: 0.7s;
+		animation-timing-function: ease-in-out;
+		mix-blend-mode: normal;
 	}
 
 	::view-transition-old(root) {
-		animation-name: simple-fade-out;
+		animation-name: fade-out;
 	}
 
 	::view-transition-new(root) {
-		animation-name: simple-fade-in;
+		animation-name: fade-in;
 	}
 }
 
-@keyframes simple-fade-out {
-	0% {
+@keyframes fade-out {
+	from {
 		opacity: 1;
 	}
-	100% {
+	to {
 		opacity: 0;
 	}
 }
 
-@keyframes simple-fade-in {
-	0% {
+@keyframes fade-in {
+	from {
 		opacity: 0;
 	}
-	100% {
+	to {
 		opacity: 1;
 	}
 }
 
 /* Fallback très subtil pour les navigateurs sans View Transition API */
 html[style*="--page-transition"] body {
-	transition: opacity 0.1s ease-out;
-	opacity: 0.95;
+	transition: opacity 0.3s ease-in-out;
 }
 
 .card-hover:hover {
