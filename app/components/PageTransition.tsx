@@ -1,10 +1,6 @@
 "use client";
 
-import { useTransition } from "../context/TransitionContext";
-
-export default function PageTransition() {
-	const { isTransitioning } = useTransition();
-
+export default function PageTransition({ isTransitioning }) {
 	if (!isTransitioning) return null;
 
 	return (
