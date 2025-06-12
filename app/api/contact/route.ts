@@ -33,14 +33,14 @@ export async function POST(request: NextRequest) {
 		}
 
 		console.log("Tentative d'envoi d'email avec Resend...");
-		console.log("From:", "onboarding@resend.dev");
-		console.log("To:", "contact@jmighty.fr");
+		console.log("From:", "contact@jmighty.fr");
+		console.log("To:", "jeanmichel.sonn@gmail.com");
 		console.log("Subject:", `Nouveau message de contact - ${name}`);
 
 		// Envoi d'email avec Resend
 		const result = await resend.emails.send({
-			from: "onboarding@resend.dev", // Domaine sandbox pour les tests
-			to: "jeanmichel.sonn@gmail.com", // Temporaire : seule adresse autorisée en mode gratuit
+			from: "Contact Xavier Aymeric Frey <contact@jmighty.fr>",
+			to: "jeanmichel.sonn@gmail.com",
 			subject: `Nouveau message de contact - ${name}`,
 			html: `
         <h2>Nouveau message de contact</h2>
