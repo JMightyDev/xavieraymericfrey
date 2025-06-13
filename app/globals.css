@@ -21,6 +21,61 @@
 	--font-sans: "Inter", "sans-serif";
 }
 
+/* Responsive design amélioré */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Mobile-first approach pour le texte */
+@media (max-width: 640px) {
+	.mobile-text-adjust {
+		font-size: 0.875rem; /* 14px */
+		line-height: 1.5;
+	}
+
+	.mobile-text-adjust h1 {
+		font-size: 1.5rem; /* 24px */
+	}
+
+	.mobile-text-adjust h2 {
+		font-size: 1.25rem; /* 20px */
+	}
+
+	.mobile-text-adjust h3 {
+		font-size: 1.125rem; /* 18px */
+	}
+
+	/* Espacement mobile */
+	.mobile-spacing {
+		padding: 0.75rem; /* 12px */
+	}
+
+	/* Images responsive */
+	.mobile-image {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+/* Amélioration du scroll sur mobile */
+@media (max-width: 768px) {
+	body {
+		-webkit-overflow-scrolling: touch;
+	}
+
+	/* Menu mobile overlay */
+	.mobile-menu-overlay {
+		position: fixed;
+		top: 64px; /* Hauteur du header */
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(15, 20, 25, 0.95);
+		backdrop-filter: blur(8px);
+		z-index: 50;
+	}
+}
+
 /* Animations de transition de page */
 @keyframes fadeInOut {
 	0% {
@@ -217,4 +272,59 @@ html[style*="--page-transition"] body {
 /* Ombre plus prononcée pour l'effet 3D */
 .shadow-3xl {
 	box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.4);
+}
+
+/* Touch-friendly buttons */
+@media (max-width: 768px) {
+	.button-hover,
+	button,
+	[role="button"] {
+		min-height: 44px; /* Apple's recommended touch target size */
+		min-width: 44px;
+	}
+}
+
+/* Classes pour l'effet 3D du livre */
+.group:hover .group-hover\:rotateY-12 {
+	transform: rotateY(-12deg) rotateX(5deg) scale(1.05);
+}
+
+.group:hover .group-hover\:rotateX-5 {
+	transform: rotateX(-5deg);
+}
+
+.group:hover .group-hover\:scale-105 {
+	transform: scale(1.05);
+}
+
+/* Effet 3D amélioré pour le livre */
+.book-3d {
+	transform-style: preserve-3d;
+	perspective: 1000px;
+}
+
+.book-3d .book-face {
+	backface-visibility: hidden;
+}
+
+/* Prevent zoom on iOS when focusing inputs */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	select,
+	textarea,
+	input[type="text"],
+	input[type="password"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="date"],
+	input[type="month"],
+	input[type="time"],
+	input[type="week"],
+	input[type="number"],
+	input[type="email"],
+	input[type="url"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="color"] {
+		font-size: 16px !important;
+	}
 }

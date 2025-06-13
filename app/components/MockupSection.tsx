@@ -12,16 +12,16 @@ export default function MockupSection() {
 	const { navigateWithTransition } = usePageTransition();
 
 	return (
-		<section className="bg-gradient-to-b from-snow-white via-morning-mist/20 to-lake-blue/10 py-20">
+		<section className="bg-gradient-to-b from-snow-white via-morning-mist/20 to-lake-blue/10 py-12 md:py-20">
 			<div className="container mx-auto px-4">
 				<h2
 					ref={titleRef as React.RefObject<HTMLHeadingElement>}
-					className={`text-4xl font-serif text-center mb-16 text-mountain-blue animate-on-scroll ${titleVisible ? "visible" : ""}`}>
+					className={`text-2xl md:text-4xl font-serif text-center mb-8 md:mb-16 text-mountain-blue animate-on-scroll ${titleVisible ? "visible" : ""}`}>
 					Plongez dans l'intrigue
 				</h2>
 
 				<div className="max-w-6xl mx-auto">
-					<div className="grid lg:grid-cols-2 gap-12 items-center">
+					<div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
 						{/* Image mockup - plus petite */}
 						<div
 							ref={imageRef as React.RefObject<HTMLDivElement>}
@@ -47,13 +47,13 @@ export default function MockupSection() {
 							ref={textRef as React.RefObject<HTMLDivElement>}
 							className={`animate-on-scroll ${textVisible ? "visible" : ""}`}
 							style={{ animationDelay: "0.4s" }}>
-							<div className="bg-snow-white/90 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-morning-mist/30">
-								<h3 className="text-2xl font-serif mb-6 text-mountain-blue">
+							<div className="bg-snow-white/90 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg border border-morning-mist/30">
+								<h3 className="text-xl md:text-2xl font-serif mb-4 md:mb-6 text-mountain-blue">
 									Extrait du livre
 								</h3>
 
-								<div className="prose prose-lg">
-									<blockquote className="text-lg italic text-stone-gray leading-relaxed mb-6 border-l-4 border-sunset-orange pl-6">
+								<div className="prose prose-base md:prose-lg">
+									<blockquote className="text-sm md:text-lg italic text-stone-gray leading-relaxed mb-4 md:mb-6 border-l-4 border-sunset-orange pl-4 md:pl-6">
 										« Les feux d'artifice explosaient au-dessus du lac d'Annecy
 										dans un fracas de lumière et de couleurs. Quarante mille
 										spectateurs levaient les yeux vers le ciel embrasé, mais
@@ -75,29 +75,29 @@ export default function MockupSection() {
 									</blockquote>
 								</div>
 
-								<div className="flex items-center justify-between pt-6 border-t border-morning-mist/30">
-									<div className="text-sm text-stone-gray">
+								<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-4 md:pt-6 border-t border-morning-mist/30 gap-4">
+									<div className="text-xs md:text-sm text-stone-gray">
 										<p className="font-medium text-mountain-blue">Chapitre 3</p>
 										<p>"Feux et disparitions"</p>
 									</div>
 									<button
 										onClick={() => navigateWithTransition("/boutique")}
-										className="bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white px-6 py-2 rounded-md button-hover shadow-lg text-sm font-medium cursor-pointer">
+										className="bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white px-4 md:px-6 py-2 rounded-md button-hover shadow-lg text-xs md:text-sm font-medium cursor-pointer">
 										Lire la suite
 									</button>
 								</div>
 							</div>
 
 							{/* Boutons d'action en dessous */}
-							<div className="flex gap-6 justify-center lg:justify-start flex-wrap mt-8">
+							<div className="flex gap-4 md:gap-6 justify-center lg:justify-start flex-wrap mt-6 md:mt-8">
 								<button
 									onClick={() => navigateWithTransition("/boutique")}
-									className="bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white px-8 py-3 rounded-md button-hover shadow-lg font-medium cursor-pointer">
+									className="bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white px-6 md:px-8 py-2 md:py-3 rounded-md button-hover shadow-lg font-medium text-sm md:text-base cursor-pointer">
 									Pré-commander
 								</button>
 								<button
 									onClick={() => navigateWithTransition("/auteur")}
-									className="border-2 border-lake-blue hover:bg-lake-blue/10 hover:border-lake-turquoise text-lake-blue hover:text-lake-turquoise px-8 py-3 rounded-md button-hover font-medium cursor-pointer">
+									className="border-2 border-lake-blue hover:bg-lake-blue/10 hover:border-lake-turquoise text-lake-blue hover:text-lake-turquoise px-6 md:px-8 py-2 md:py-3 rounded-md button-hover font-medium text-sm md:text-base cursor-pointer">
 									Découvrir l'auteur
 								</button>
 							</div>

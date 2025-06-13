@@ -46,13 +46,13 @@ export default function Header() {
 	];
 
 	return (
-		<header className="bg-gradient-to-r from-deep-night to-mountain-blue text-white shadow-lg relative z-50">
+		<header className="bg-gradient-to-r from-deep-night to-mountain-blue text-white shadow-lg fixed top-0 w-full z-[60]">
 			<div className="container mx-auto px-4">
 				<div className="flex items-center justify-between h-16">
 					{/* Logo/Nom */}
 					<button
 						onClick={() => navigateWithTransition("/")}
-						className="text-xl font-serif text-snow-white hover:text-lake-turquoise transition-colors duration-200 cursor-pointer">
+						className="text-lg sm:text-xl font-serif text-snow-white hover:text-lake-turquoise transition-colors duration-200 cursor-pointer truncate">
 						Xavier Aymeric Frey
 					</button>
 
@@ -91,7 +91,8 @@ export default function Header() {
 					{/* Menu burger mobile */}
 					<button
 						onClick={() => setIsMenuOpen(!isMenuOpen)}
-						className="md:hidden flex flex-col justify-center items-center w-8 h-8 cursor-pointer">
+						className="md:hidden flex flex-col justify-center items-center w-8 h-8 cursor-pointer p-1"
+						aria-label="Menu de navigation">
 						<span
 							className={`bg-snow-white block h-0.5 w-6 rounded transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-1.5" : ""}`}></span>
 						<span
@@ -103,7 +104,7 @@ export default function Header() {
 
 				{/* Menu mobile */}
 				{isMenuOpen && (
-					<div className="md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-deep-night to-mountain-blue border-t border-lake-turquoise/30 shadow-xl">
+					<div className="md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-deep-night to-mountain-blue border-t border-lake-turquoise/30 shadow-xl z-[50]">
 						<nav className="px-4 py-6 space-y-4">
 							{navigationItems.map((item) => (
 								<button
@@ -112,13 +113,13 @@ export default function Header() {
 										navigateWithTransition(item.href);
 										setIsMenuOpen(false);
 									}}
-									className="block w-full text-left text-morning-mist hover:text-lake-turquoise transition-colors duration-200 cursor-pointer font-medium py-2">
+									className="block w-full text-left text-morning-mist hover:text-lake-turquoise transition-colors duration-200 cursor-pointer font-medium py-2 px-2 rounded hover:bg-white/5">
 									{item.name}
 								</button>
 							))}
 
 							{/* Réseaux sociaux mobile */}
-							<div className="flex items-center space-x-6 pt-4 border-t border-lake-turquoise/30">
+							<div className="flex items-center justify-center space-x-6 pt-4 border-t border-lake-turquoise/30">
 								<span className="text-sm text-morning-mist">Suivez-moi :</span>
 								{socialLinks.map((social) => (
 									<a
@@ -126,7 +127,7 @@ export default function Header() {
 										href={social.href}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="text-morning-mist hover:text-lake-turquoise transition-colors duration-200 cursor-pointer"
+										className="text-morning-mist hover:text-lake-turquoise transition-colors duration-200 cursor-pointer p-2"
 										title={social.name}>
 										{social.icon}
 									</a>

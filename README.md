@@ -75,7 +75,7 @@ NEXT_PUBLIC_SITE_URL=https://votre-domaine.com
 - ✅ Animations CSS fluides
 - ✅ Formulaire de contact
 - ✅ Liens vers réseaux sociaux
-- ✅ Newsletter (prêt pour intégration)
+- ✅ Newsletter
 
 ## 🔧 Personnalisation
 
@@ -91,4 +91,4 @@ Pour toute question ou problème, contactez [contact@jmighty.fr]
 
 ---
 
-© 2024 Xavier Aymeric Frey. Tous droits réservés.
+© 2025 JMighty. Tous droits réservés.
