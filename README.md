@@ -219,10 +219,18 @@ app/
 
 ### Variables d'environnement
 
+Créer un fichier `.env.local` avec :
+
 ```env
-NEXT_PUBLIC_SITE_URL=https://xavieraymericfrey.com
-NEXT_PUBLIC_CONTACT_EMAIL=contact@xavieraymericfrey.com
+RESEND_API_KEY=your_resend_api_key_here
+BREVO_API_KEY=your_brevo_api_key_here
+BREVO_LIST_ID=your_brevo_list_id_here
 ```
+
+**Services utilisés :**
+
+- **Resend** : Service d'envoi d'emails pour le formulaire de contact
+- **Brevo** : Gestion de la newsletter et listes de contacts
 
 ## 🔧 Maintenance
 
