@@ -72,7 +72,7 @@ export default function Footer() {
 									<span className="font-medium">Instagram</span>
 								</a>
 								<a
-									href="https://youtube.com/@xavieraymeric_frey"
+									href="https://www.youtube.com/@xavieraymericfrey/featured"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="group flex items-center justify-center lg:justify-start text-white/90 hover:text-white transition-all duration-300 bg-white/5 hover:bg-white/10 rounded-lg p-3 border border-white/10 hover:border-red-600/30">
