@@ -146,7 +146,14 @@ export default function Footer() {
 				<div className="border-t border-gradient-to-r from-transparent via-lake-blue/30 to-transparent pt-8">
 					<div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
 						<p className="text-morning-mist text-sm">
-							© 2025 Xavier Aymeric Frey. Tous droits réservés.
+							© 2025 Xavier Aymeric Frey • Site créé par{" "}
+							<a
+								href="https://www.jmighty.fr"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-lake-turquoise hover:text-sunset-orange transition-colors duration-300">
+								JMighty
+							</a>
 						</p>
 						<div className="flex items-center space-x-6 text-sm text-morning-mist">
 							<span className="flex items-center">
