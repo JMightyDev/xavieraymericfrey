@@ -91,8 +91,7 @@ export default function Quote() {
 					<div className="bg-gradient-to-r from-sunset-orange/10 via-transparent to-lake-turquoise/10 rounded-xl p-8 backdrop-blur-sm border border-white/10">
 						<div className="w-24 md:w-32 h-1 bg-gradient-to-r from-sunset-orange to-lake-turquoise mx-auto mb-6 rounded-full shadow-lg"></div>
 						<p className="text-morning-mist/90 text-lg md:text-xl font-serif italic leading-relaxed">
-							Une philosophie qui guide chaque page de cette enquête où se
-							mêlent secrets de l'âme et mystères des montagnes.
+							Êtes-vous prêt à plonger dans les mystères de l'âme humaine ?
 						</p>
 						<div className="w-16 md:w-20 h-px bg-gradient-to-r from-transparent via-sunset-orange to-transparent mx-auto mt-6 rounded-full"></div>
 					</div>
