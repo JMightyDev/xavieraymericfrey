@@ -96,23 +96,10 @@ export default function Quote() {
 					style={{ animationDelay: "0.6s" }}>
 					<div
 						onClick={() => navigateWithTransition("/boutique")}
-						className="bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/90 backdrop-blur-sm rounded-xl p-10 md:p-12 border border-white/30 shadow-2xl relative overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-white/10 hover:shadow-2xl">
-						{/* Effet de pulsation sombre/clair plus visible */}
-						<div
-							className="absolute inset-0 bg-white/15 rounded-xl animate-pulse"
-							style={{ animationDuration: "3s" }}></div>
-
-						{/* Effet de lueur au survol - blanc/gris */}
-						<div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-						{/* Bordure qui s'intensifie au survol - blanche */}
-						<div className="absolute inset-0 border border-white/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-						<div className="relative z-10">
-							<p className="text-white text-xl md:text-2xl lg:text-3xl font-serif italic leading-relaxed text-center font-medium group-hover:text-gray-100 transition-colors duration-500">
-								Êtes-vous prêt à plonger dans les mystères de l'âme humaine ?
-							</p>
-						</div>
+						className="bg-white/10 backdrop-blur-sm rounded-xl p-10 md:p-12 border border-white/30 shadow-2xl cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-white/15 hover:border-white/40">
+						<p className="text-white text-xl md:text-2xl lg:text-3xl font-serif italic leading-relaxed text-center font-medium">
+							Êtes-vous prêt à plonger dans les mystères de l'âme humaine ?
+						</p>
 					</div>
 				</div>
 			</div>
