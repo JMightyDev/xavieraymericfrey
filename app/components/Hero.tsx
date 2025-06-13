@@ -162,13 +162,13 @@ export default function Hero() {
 				}
 			`}</style>
 
-			<div className="container mx-auto px-4 pt-16 md:pt-24 lg:pt-32 pb-12 relative z-10 flex flex-col min-h-screen">
+			<div className="container mx-auto px-4 pt-20 md:pt-24 lg:pt-32 pb-12 relative z-10 flex flex-col min-h-screen">
 				{/* Mise en page repensée : auteur à gauche, livre au centre, mieux équilibrée */}
 				<div className="flex-1 flex items-center justify-center relative">
 					<div className="w-full max-w-6xl mx-auto">
 						<div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 xl:gap-16">
 							{/* Section auteur à gauche - design raffiné */}
-							<div className="flex-shrink-0 lg:w-80 xl:w-96 -mt-64 lg:-mt-72">
+							<div className="flex-shrink-0 lg:w-80 xl:w-96 -mt-8 lg:-mt-72">
 								<div className="relative">
 									{/* Arrière-plan élégant avec effet glassmorphism */}
 									<div className="absolute inset-0 -inset-8 bg-gradient-to-br from-white/5 via-white/10 to-white/5 backdrop-blur-sm rounded-3xl border border-white/10 shadow-2xl"></div>
@@ -228,7 +228,7 @@ export default function Hero() {
 							<div className="flex-1 flex justify-center max-w-sm lg:max-w-md xl:max-w-lg">
 								<div className="text-center">
 									{/* Livre avec proportions harmonieuses */}
-									<div className="relative inline-block -mt-4 lg:-mt-6">
+									<div className="relative inline-block mt-4 lg:-mt-6">
 										{/* Halo subtil et ombre réaliste - proportions réduites */}
 										<div className="absolute inset-0 -inset-6">
 											{/* Halo subtil rouge */}
