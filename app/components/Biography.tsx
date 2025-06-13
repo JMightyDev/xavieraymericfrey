@@ -80,14 +80,14 @@ export default function Biography() {
 
 							{/* Signature avec effet hover amélioré */}
 							<div className="mt-12 text-center">
-								<div className="inline-block transition-all duration-500 hover:scale-125 hover:rotate-1">
+								<div className="inline-block transition-all duration-500 hover:scale-110">
 									<Image
 										src="/images/hero/signature-finale.png"
 										alt="Signature Xavier Aymeric Frey"
-										width={200}
-										height={80}
-										sizes="200px"
-										className="opacity-80 hover:opacity-100 transition-all duration-500 hover:drop-shadow-lg"
+										width={250}
+										height={100}
+										sizes="250px"
+										className="hover:opacity-100 transition-all duration-500 hover:drop-shadow-lg"
 									/>
 								</div>
 							</div>
