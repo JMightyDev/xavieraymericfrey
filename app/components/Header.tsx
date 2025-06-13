@@ -52,7 +52,7 @@ export default function Header() {
 					{/* Logo/Nom */}
 					<button
 						onClick={() => navigateWithTransition("/")}
-						className="text-lg sm:text-xl font-serif text-snow-white hover:text-lake-turquoise transition-colors duration-200 cursor-pointer truncate">
+						className="text-lg sm:text-xl font-serif text-snow-white hover:text-red-600 transition-colors duration-200 cursor-pointer truncate">
 						Xavier Aymeric Frey
 					</button>
 
@@ -62,7 +62,7 @@ export default function Header() {
 							<button
 								key={item.name}
 								onClick={() => navigateWithTransition(item.href)}
-								className="text-morning-mist hover:text-lake-turquoise transition-colors duration-200 cursor-pointer font-medium">
+								className="text-morning-mist hover:text-red-600 transition-colors duration-200 cursor-pointer font-medium">
 								{item.name}
 							</button>
 						))}
@@ -78,7 +78,7 @@ export default function Header() {
 									href={social.href}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="text-morning-mist hover:text-lake-turquoise transition-all duration-200 hover:scale-110 cursor-pointer group"
+									className="text-morning-mist hover:text-red-600 transition-all duration-200 hover:scale-110 cursor-pointer group"
 									title={social.name}>
 									<div className="group-hover:scale-110 transition-transform duration-200">
 										{social.icon}
@@ -104,7 +104,7 @@ export default function Header() {
 
 				{/* Menu mobile */}
 				{isMenuOpen && (
-					<div className="md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-deep-night to-mountain-blue border-t border-lake-turquoise/30 shadow-xl z-[50]">
+					<div className="md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-deep-night to-mountain-blue border-t border-red-600/30 shadow-xl z-[50]">
 						<nav className="px-4 py-6 space-y-4">
 							{navigationItems.map((item) => (
 								<button
@@ -113,13 +113,13 @@ export default function Header() {
 										navigateWithTransition(item.href);
 										setIsMenuOpen(false);
 									}}
-									className="block w-full text-left text-morning-mist hover:text-lake-turquoise transition-colors duration-200 cursor-pointer font-medium py-2 px-2 rounded hover:bg-white/5">
+									className="block w-full text-left text-morning-mist hover:text-red-600 transition-colors duration-200 cursor-pointer font-medium py-2 px-2 rounded hover:bg-white/5">
 									{item.name}
 								</button>
 							))}
 
 							{/* Réseaux sociaux mobile */}
-							<div className="flex items-center justify-center space-x-6 pt-4 border-t border-lake-turquoise/30">
+							<div className="flex items-center justify-center space-x-6 pt-4 border-t border-red-600/30">
 								<span className="text-sm text-morning-mist">Suivez-moi :</span>
 								{socialLinks.map((social) => (
 									<a
@@ -127,7 +127,7 @@ export default function Header() {
 										href={social.href}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="text-morning-mist hover:text-lake-turquoise transition-colors duration-200 cursor-pointer p-2"
+										className="text-morning-mist hover:text-red-600 transition-colors duration-200 cursor-pointer p-2"
 										title={social.name}>
 										{social.icon}
 									</a>

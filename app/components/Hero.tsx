@@ -40,58 +40,42 @@ export default function Hero() {
 
 			{/* Effets décoratifs d'ambiance enrichis */}
 			<div className="absolute inset-0 opacity-15 pointer-events-none">
-				<div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-br from-sunset-orange to-lake-turquoise rounded-full blur-3xl animate-pulse"></div>
+				<div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-br from-red-600 to-gray-800 rounded-full blur-3xl animate-pulse"></div>
 				<div
-					className="absolute bottom-32 right-16 w-48 h-48 bg-gradient-to-br from-lake-turquoise to-sunset-orange rounded-full blur-3xl animate-pulse"
+					className="absolute bottom-32 right-16 w-48 h-48 bg-gradient-to-br from-gray-800 to-red-600 rounded-full blur-3xl animate-pulse"
 					style={{ animationDelay: "2s" }}></div>
 				<div
-					className="absolute top-1/3 left-1/4 w-24 h-24 bg-morning-mist/40 rounded-full blur-2xl animate-pulse"
+					className="absolute top-1/3 left-1/4 w-24 h-24 bg-gray-700/40 rounded-full blur-2xl animate-pulse"
 					style={{ animationDelay: "4s" }}></div>
 				<div
-					className="absolute bottom-1/4 left-3/4 w-32 h-32 bg-sunset-orange/30 rounded-full blur-2xl animate-pulse"
+					className="absolute bottom-1/4 left-3/4 w-32 h-32 bg-red-600/30 rounded-full blur-2xl animate-pulse"
 					style={{ animationDelay: "6s" }}></div>
 			</div>
 
-			{/* Ombres animées sur le lac */}
-			<div className="absolute top-1/4 left-0 right-0 bottom-0 overflow-hidden pointer-events-none">
-				{/* Ombre 1 - grande ombre qui traverse lentement */}
+			{/* Ombres humaines animées sur le lac */}
+			<div className="absolute top-1/3 left-0 right-0 bottom-0 overflow-hidden pointer-events-none">
+				{/* Ombre 1 - silhouette humaine grande qui traverse lentement */}
 				<div
-					className="absolute top-1/4 w-96 h-80 bg-black/35 rounded-full blur-2xl opacity-80"
+					className="absolute top-1/3 w-32 h-96 bg-black/35 rounded-full blur-xl opacity-70"
 					style={{
 						animation: "shadowFloat1 25s ease-in-out infinite",
 						animationDelay: "0s",
 					}}></div>
 
-				{/* Ombre 2 - ombre moyenne qui va dans l'autre sens */}
+				{/* Ombre 2 - silhouette humaine moyenne qui va dans l'autre sens */}
 				<div
-					className="absolute top-1/2 w-80 h-60 bg-deep-night/40 rounded-full blur-xl opacity-70"
+					className="absolute top-1/2 w-28 h-80 bg-black/30 rounded-full blur-lg opacity-65"
 					style={{
 						animation: "shadowFloat2 30s ease-in-out infinite",
-						animationDelay: "8s",
+						animationDelay: "12s",
 					}}></div>
 
-				{/* Ombre 3 - petite ombre rapide */}
+				{/* Ombre 3 - silhouette humaine distante */}
 				<div
-					className="absolute top-1/3 w-60 h-40 bg-mountain-blue/45 rounded-full blur-lg opacity-60"
-					style={{
-						animation: "shadowFloat3 20s ease-in-out infinite",
-						animationDelay: "15s",
-					}}></div>
-
-				{/* Ombre 4 - ombre allongée qui glisse */}
-				<div
-					className="absolute top-2/3 w-120 h-32 bg-black/30 rounded-full blur-xl opacity-85"
+					className="absolute top-2/5 w-24 h-64 bg-black/25 rounded-full blur-lg opacity-60"
 					style={{
 						animation: "shadowFloat4 35s linear infinite",
-						animationDelay: "5s",
-					}}></div>
-
-				{/* Ombre 5 - nouvelle ombre pour plus d'effet */}
-				<div
-					className="absolute top-1/6 w-72 h-48 bg-slate-800/35 rounded-full blur-2xl opacity-75"
-					style={{
-						animation: "shadowFloat5 28s ease-in-out infinite",
-						animationDelay: "12s",
+						animationDelay: "20s",
 					}}></div>
 			</div>
 
@@ -178,184 +162,163 @@ export default function Hero() {
 				}
 			`}</style>
 
-			<div className="container mx-auto px-4 pt-8 md:pt-12 lg:pt-16 pb-8 relative z-10 flex flex-col min-h-screen">
-				{/* Section auteur en haut - améliorée esthétiquement */}
-				<div className="relative mb-8 md:mb-12">
-					{/* Effets décoratifs autour de la section auteur - enrichis */}
-					<div className="absolute inset-0 -inset-20 opacity-25">
-						<div className="absolute top-0 left-0 w-24 h-24 border-2 border-sunset-orange/60 rounded-full animate-pulse shadow-lg"></div>
-						<div
-							className="absolute top-6 right-12 w-16 h-16 border border-lake-turquoise/70 rounded-full animate-pulse shadow-md"
-							style={{ animationDelay: "1s" }}></div>
-						<div
-							className="absolute bottom-4 left-1/3 w-12 h-12 bg-morning-mist/40 rounded-full blur-sm animate-pulse shadow-sm"
-							style={{ animationDelay: "2s" }}></div>
-						<div
-							className="absolute top-1/2 right-1/4 w-8 h-8 bg-sunset-orange/50 rounded-full blur-sm animate-pulse"
-							style={{ animationDelay: "3s" }}></div>
-					</div>
+			<div className="container mx-auto px-4 pt-16 md:pt-24 lg:pt-32 pb-12 relative z-10 flex flex-col min-h-screen">
+				{/* Mise en page repensée : auteur à gauche, livre au centre, mieux équilibrée */}
+				<div className="flex-1 flex items-center justify-center relative">
+					<div className="w-full max-w-6xl mx-auto">
+						<div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 xl:gap-16">
+							{/* Section auteur à gauche - design raffiné */}
+							<div className="flex-shrink-0 lg:w-80 xl:w-96 -mt-64 lg:-mt-72">
+								<div className="relative">
+									{/* Arrière-plan élégant avec effet glassmorphism */}
+									<div className="absolute inset-0 -inset-8 bg-gradient-to-br from-white/5 via-white/10 to-white/5 backdrop-blur-sm rounded-3xl border border-white/10 shadow-2xl"></div>
+									<div className="absolute inset-0 -inset-8 bg-gradient-to-br from-red-600/5 via-transparent to-gray-800/5 rounded-3xl"></div>
 
-					<div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 relative">
-						{/* Photo de l'auteur avec effets améliorés et contraste renforcé */}
-						<div className="flex-shrink-0 relative">
-							{/* Halos multiples renforcés autour de la photo */}
-							<div className="absolute inset-0 -inset-6 bg-gradient-to-r from-sunset-orange/40 to-lake-turquoise/40 rounded-full blur-2xl animate-pulse"></div>
-							<div className="absolute inset-0 -inset-4 bg-gradient-to-br from-lake-turquoise/30 to-sunset-orange/30 rounded-full blur-xl"></div>
-							<div className="absolute inset-0 -inset-2 bg-sunset-orange/20 rounded-full blur-lg"></div>
+									<div className="relative z-10 flex flex-col items-center gap-8 p-8">
+										{/* Photo de l'auteur avec cadre élégant */}
+										<div className="flex-shrink-0 relative">
+											{/* Cadre décoratif subtil */}
+											<div className="absolute inset-0 -inset-4 bg-gradient-to-br from-white/20 via-white/5 to-white/20 rounded-full blur-sm"></div>
+											<div className="absolute inset-0 -inset-2 bg-gradient-to-br from-red-600/10 to-gray-800/10 rounded-full"></div>
 
-							{/* Cadre décoratif avec bordure gradient plus marquée */}
-							<div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-gradient-to-r from-sunset-orange via-lake-turquoise to-sunset-orange shadow-2xl transition-all duration-500 hover:scale-110 hover:shadow-3xl">
-								<div className="absolute inset-0 bg-gradient-to-br from-sunset-orange/25 to-lake-turquoise/25 rounded-full"></div>
-								{/* Bordure gradient visible */}
-								<div className="absolute inset-0 rounded-full border-4 border-transparent bg-gradient-to-r from-sunset-orange via-lake-turquoise to-sunset-orange bg-clip-border"></div>
-								<div className="absolute inset-1 rounded-full bg-white/10 backdrop-blur-sm"></div>
-								<Image
-									src="/images/hero/xavier-portrait.png"
-									alt="Xavier Aymeric Frey"
-									fill
-									sizes="(max-width: 640px) 112px, (max-width: 768px) 144px, 176px"
-									className="object-cover object-center scale-110 relative z-10 rounded-full"
-									style={{ objectPosition: "center 20%" }}
-									priority
-								/>
-							</div>
+											{/* Photo avec bordure élégante */}
+											<div className="relative w-32 h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 xl:w-48 xl:h-48 rounded-full overflow-hidden border-2 border-white/20 shadow-2xl transition-all duration-700 hover:scale-105 hover:border-white/30">
+												<div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 rounded-full"></div>
+												<Image
+													src="/images/hero/xavier-portrait.png"
+													alt="Xavier Aymeric Frey"
+													fill
+													sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, (max-width: 1280px) 176px, 192px"
+													className="object-cover object-center scale-110 rounded-full transition-all duration-700 hover:scale-115"
+													style={{ objectPosition: "center 20%" }}
+													priority
+												/>
+											</div>
+										</div>
 
-							{/* Points décoratifs autour de la photo - enrichis */}
-							<div
-								className="absolute -top-3 -right-3 w-5 h-5 bg-lake-turquoise rounded-full animate-bounce shadow-lg"
-								style={{ animationDelay: "0.5s" }}></div>
-							<div
-								className="absolute -bottom-3 -left-3 w-4 h-4 bg-sunset-orange rounded-full animate-bounce shadow-md"
-								style={{ animationDelay: "1.5s" }}></div>
-							<div
-								className="absolute top-1/4 -right-6 w-3 h-3 bg-morning-mist rounded-full animate-bounce shadow-sm"
-								style={{ animationDelay: "2.5s" }}></div>
-						</div>
+										{/* Nom de l'auteur avec typographie raffinée */}
+										<div className="text-center space-y-4">
+											{/* Séparateur décoratif minimaliste */}
+											<div className="flex items-center justify-center mb-2">
+												<div className="w-16 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+											</div>
 
-						{/* Nom de l'auteur avec design amélioré et lisibilité renforcée */}
-						<div className="text-center relative">
-							{/* Ornements décoratifs enrichis */}
-							<div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-transparent via-sunset-orange/70 to-transparent rounded-full shadow-lg"></div>
-							<div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-lake-turquoise/70 to-transparent rounded-full shadow-lg"></div>
+											<h1 className="font-serif text-xl md:text-2xl lg:text-3xl xl:text-4xl text-snow-white font-bold tracking-wide">
+												<span className="bg-gradient-to-r from-white via-white to-white/90 bg-clip-text text-transparent drop-shadow-2xl">
+													Xavier Aymeric Frey
+												</span>
+											</h1>
 
-							{/* Arrière-plan décoratif pour le nom - plus opaque et avec bordure */}
-							<div className="absolute inset-0 -inset-8 bg-white/15 backdrop-blur-md rounded-2xl border border-white/20 shadow-2xl"></div>
-							<div className="absolute inset-0 -inset-8 bg-gradient-to-br from-sunset-orange/10 to-lake-turquoise/10 rounded-2xl"></div>
+											{/* Séparateur décoratif minimaliste */}
+											<div className="flex items-center justify-center my-3">
+												<div className="w-12 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+											</div>
 
-							<div className="relative z-10 px-8 py-6">
-								<h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-snow-white font-bold drop-shadow-[0_6px_12px_rgba(0,0,0,0.7)] mb-4">
-									Xavier Aymeric Frey
-								</h1>
-
-								{/* Ligne décorative améliorée avec bordure gradient */}
-								<div className="relative w-28 sm:w-36 md:w-44 h-1 mx-auto mb-4">
-									<div className="absolute inset-0 bg-gradient-to-r from-sunset-orange via-lake-turquoise to-sunset-orange rounded-full shadow-xl"></div>
-									<div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent rounded-full animate-pulse"></div>
-									<div className="absolute -inset-1 bg-gradient-to-r from-sunset-orange/30 via-lake-turquoise/30 to-sunset-orange/30 rounded-full blur-sm"></div>
-								</div>
-
-								{/* Sous-titre subtil avec meilleur contraste */}
-								<p className="text-morning-mist/90 text-sm md:text-base font-medium tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-									Auteur de thriller policier
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				{/* Section livre au centre - livre plus grand et proportions harmonisées */}
-				<div className="flex-1 flex items-center justify-center">
-					<div className="text-center">
-						{/* Livre avec halo amélioré et taille plus grande */}
-						<div className="relative inline-block">
-							{/* Halo subtil et ombre réaliste */}
-							<div className="absolute inset-0 -inset-8">
-								{/* Halo subtil bleu-turquoise seulement */}
-								<div className="absolute inset-0 bg-gradient-to-r from-lake-turquoise/20 via-lake-turquoise/15 to-lake-turquoise/20 blur-2xl transform scale-110 rounded-[40%] animate-pulse"></div>
-								{/* Halo externe très léger */}
-								<div className="absolute inset-0 bg-lake-turquoise/10 blur-xl transform scale-[1.15] rounded-[45%]"></div>
-							</div>
-
-							{/* Ombre réaliste orangée sous le livre */}
-							<div className="absolute inset-0 -inset-4">
-								{/* Ombre orangée principale sous le livre */}
-								<div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-8 w-48 h-24 bg-gradient-to-r from-transparent via-sunset-orange/40 to-transparent blur-xl rounded-full"></div>
-								{/* Ombre orangée secondaire plus diffuse */}
-								<div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-12 w-56 h-20 bg-gradient-to-r from-transparent via-sunset-orange/25 to-transparent blur-2xl rounded-full"></div>
-								{/* Lueur orangée sur le sol */}
-								<div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-16 w-64 h-16 bg-gradient-to-r from-sunset-orange/15 via-sunset-orange/20 to-sunset-orange/15 blur-3xl rounded-full"></div>
-							</div>
-
-							{/* Ombres très améliorées du livre - plus prononcées */}
-							<div className="absolute inset-0 -inset-6">
-								{/* Ombre principale (la plus proche) - renforcée */}
-								<div className="absolute inset-0 bg-black/40 blur-xl transform translate-y-8 translate-x-6 scale-110 rounded-xl"></div>
-								{/* Ombre secondaire (plus diffuse) */}
-								<div className="absolute inset-0 bg-black/25 blur-2xl transform translate-y-12 translate-x-8 scale-115 rounded-xl"></div>
-								{/* Ombre d'ambiance (très diffuse) */}
-								<div className="absolute inset-0 bg-black/15 blur-3xl transform translate-y-16 translate-x-10 scale-120 rounded-xl"></div>
-								{/* Ombre de contact (au sol) - plus prononcée */}
-								<div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-12 w-40 h-12 bg-black/35 blur-xl rounded-full"></div>
-							</div>
-
-							{/* Conteneur du livre plus grand */}
-							<div
-								onClick={() => navigateWithTransition("/boutique")}
-								className="relative cursor-pointer z-10 transform hover:scale-110 transition-all duration-700 hover:rotate-2 hover:-translate-y-4 hover:shadow-3xl"
-								role="link"
-								aria-label="Voir le livre dans la boutique">
-								<div className="relative rounded-xl overflow-hidden">
-									<Image
-										src="/images/book/ombre-sur-le-lac.webp"
-										alt="Ombres sur le lac - Couverture du livre - Cliquez pour accéder à la boutique"
-										width={320}
-										height={480}
-										sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 360px"
-										className="w-64 h-auto sm:w-80 md:w-90"
-										priority
-									/>
-									{/* Reflet subtil sur le livre - amélioré */}
-									<div className="absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-transparent opacity-50 rounded-xl"></div>
-									{/* Reflet animé */}
-									<div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-30 rounded-xl transform -skew-x-12 animate-pulse"></div>
-									{/* Ombre interne pour plus de profondeur */}
-									<div className="absolute inset-0 shadow-inner rounded-xl"></div>
-									{/* Bordure subtile */}
-									<div className="absolute inset-0 border border-white/10 rounded-xl"></div>
+											<p className="text-morning-mist/90 text-sm md:text-base font-medium tracking-wider uppercase letter-spacing-wide">
+												<span className="bg-gradient-to-r from-morning-mist/90 to-morning-mist/70 bg-clip-text text-transparent">
+													Auteur de thriller policier
+												</span>
+											</p>
+										</div>
+									</div>
 								</div>
 							</div>
-						</div>
 
-						{/* Informations du livre */}
-						<div className="mt-6 md:mt-8 space-y-3 md:space-y-4">
-							<div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
-								<div className="flex flex-col items-center">
-									<span className="text-3xl md:text-4xl font-bold text-sunset-orange drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">
-										11,50 €
-									</span>
-									<span className="text-sm md:text-base text-snow-white/90 mt-1 font-medium">
-										TTC FRANCE
-									</span>
-								</div>
-								<div className="hidden sm:block h-16 w-px bg-gradient-to-b from-transparent via-white/40 to-transparent"></div>
-								<div className="w-full sm:w-px h-px sm:h-0 bg-gradient-to-r from-transparent via-white/40 to-transparent sm:hidden"></div>
-								<div className="flex flex-col items-center">
-									<span className="text-lg md:text-xl font-medium text-snow-white/95">
-										Roman policier
-									</span>
-									<span className="text-sm md:text-base text-snow-white/85 mt-1">
-										Sortie prévue : été 2025
-									</span>
+							{/* Section livre au centre - taille parfaite */}
+							<div className="flex-1 flex justify-center max-w-sm lg:max-w-md xl:max-w-lg">
+								<div className="text-center">
+									{/* Livre avec proportions harmonieuses */}
+									<div className="relative inline-block -mt-4 lg:-mt-6">
+										{/* Halo subtil et ombre réaliste - proportions réduites */}
+										<div className="absolute inset-0 -inset-6">
+											{/* Halo subtil rouge */}
+											<div className="absolute inset-0 bg-gradient-to-r from-red-600/15 via-red-500/10 to-red-600/15 blur-xl transform scale-105 rounded-[40%] animate-pulse"></div>
+											{/* Halo externe léger */}
+											<div className="absolute inset-0 bg-gray-800/8 blur-lg transform scale-110 rounded-[45%]"></div>
+										</div>
+
+										{/* Ombre réaliste rouge sous le livre - proportions ajustées */}
+										<div className="absolute inset-0 -inset-4">
+											{/* Ombre rouge principale */}
+											<div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-6 w-40 h-20 bg-gradient-to-r from-transparent via-red-600/30 to-transparent blur-lg rounded-full"></div>
+											{/* Ombre rouge secondaire */}
+											<div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-8 w-48 h-16 bg-gradient-to-r from-transparent via-red-600/20 to-transparent blur-xl rounded-full"></div>
+											{/* Lueur rouge sur le sol */}
+											<div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-10 w-56 h-12 bg-gradient-to-r from-red-600/10 via-red-600/15 to-red-600/10 blur-2xl rounded-full"></div>
+										</div>
+
+										{/* Ombres du livre - proportions équilibrées */}
+										<div className="absolute inset-0 -inset-4">
+											{/* Ombre principale */}
+											<div className="absolute inset-0 bg-black/30 blur-lg transform translate-y-6 translate-x-4 scale-105 rounded-lg"></div>
+											{/* Ombre secondaire */}
+											<div className="absolute inset-0 bg-black/20 blur-xl transform translate-y-8 translate-x-6 scale-110 rounded-lg"></div>
+											{/* Ombre d'ambiance */}
+											<div className="absolute inset-0 bg-black/10 blur-2xl transform translate-y-10 translate-x-8 scale-115 rounded-lg"></div>
+										</div>
+
+										{/* Conteneur du livre - taille optimisée avec animation douce */}
+										<div
+											onClick={() => navigateWithTransition("/boutique")}
+											className="relative cursor-pointer z-10 transition-all duration-1000 ease-out hover:scale-105 hover:-translate-y-2 hover:brightness-110 group"
+											role="link"
+											aria-label="Voir le livre dans la boutique">
+											<div className="relative rounded-lg overflow-hidden transform transition-transform duration-1000">
+												<Image
+													src="/images/book/ombre-sur-le-lac.webp"
+													alt="Ombres sur le lac - Couverture du livre - Cliquez pour accéder à la boutique"
+													width={300}
+													height={450}
+													sizes="(max-width: 640px) 240px, (max-width: 768px) 280px, (max-width: 1024px) 320px, 360px"
+													className="w-60 h-auto md:w-70 lg:w-80 xl:w-90 transition-all duration-1000"
+													priority
+												/>
+												{/* Reflet subtil sur le livre */}
+												<div className="absolute inset-0 bg-gradient-to-br from-white/12 via-transparent to-transparent opacity-40 rounded-lg transition-opacity duration-1000 group-hover:opacity-60"></div>
+												{/* Reflet animé qui apparaît au hover */}
+												<div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/8 to-transparent opacity-0 rounded-lg transform -skew-x-12 transition-all duration-1000 group-hover:opacity-50 group-hover:translate-x-1"></div>
+												{/* Ombre interne pour profondeur */}
+												<div className="absolute inset-0 shadow-inner rounded-lg"></div>
+												{/* Bordure subtile */}
+												<div className="absolute inset-0 border border-white/8 rounded-lg transition-all duration-1000 group-hover:border-white/15"></div>
+											</div>
+										</div>
+									</div>
+
+									{/* Informations du livre - proportions ajustées */}
+									<div className="mt-6 md:mt-8 lg:mt-10 space-y-4 md:space-y-6">
+										<div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+											<div className="flex flex-col items-center">
+												<span className="text-2xl md:text-3xl lg:text-4xl font-bold text-red-600 drop-shadow-lg">
+													11,50 €
+												</span>
+												<span className="text-sm md:text-base text-snow-white/90 mt-1 font-medium">
+													TTC FRANCE
+												</span>
+											</div>
+											<div className="hidden sm:block h-12 w-px bg-gradient-to-b from-transparent via-white/40 to-transparent"></div>
+											<div className="w-full sm:w-px h-px sm:h-0 bg-gradient-to-r from-transparent via-white/40 to-transparent sm:hidden"></div>
+											<div className="flex flex-col items-center">
+												<span className="text-lg md:text-xl lg:text-2xl font-medium text-snow-white/95">
+													Roman policier
+												</span>
+												<span className="text-sm md:text-base text-snow-white/85 mt-1">
+													Sortie prévue : été 2025
+												</span>
+											</div>
+										</div>
+										<div className="text-sm md:text-base text-snow-white/80 text-center mt-3">
+											<span>ISBN 979-1-041-54523-0</span>
+										</div>
+										<button
+											onClick={() => navigateWithTransition("/boutique")}
+											className="mt-6 md:mt-8 relative overflow-hidden bg-gradient-to-r from-gray-800 to-gray-900 text-white px-8 md:px-12 py-3 md:py-4 rounded-md button-hover shadow-lg font-medium text-base md:text-lg cursor-pointer group">
+											<div className="absolute inset-0 bg-gradient-to-r from-red-800 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"></div>
+											<span className="relative z-10">Pré-commander</span>
+										</button>
+									</div>
 								</div>
 							</div>
-							<div className="text-sm md:text-base text-snow-white/80 text-center mt-3">
-								<span>ISBN 979-1-041-54523-0</span>
-							</div>
-							<button
-								onClick={() => navigateWithTransition("/boutique")}
-								className="mt-4 md:mt-6 px-8 py-3 bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white font-medium rounded-lg button-hover shadow-xl cursor-pointer text-base md:text-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl">
-								Pré-commander
-							</button>
 						</div>
 					</div>
 				</div>

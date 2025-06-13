@@ -57,13 +57,13 @@ export default function BookSection() {
 							onClick={() => navigateWithTransition("/boutique")}
 							className="shadow-2xl rounded-lg overflow-hidden transition-all duration-500 hover:shadow-3xl hover:-translate-y-2 hover:rotate-1 group will-change-transform cursor-pointer hover:scale-105">
 							<Image
-								src="/images/book/ombre-sur-le-lac.webp"
-								alt="Couverture Ombres sur le lac - Cliquez pour commander"
-								width={280}
-								height={400}
-								sizes="(max-width: 640px) 240px, (max-width: 768px) 280px, (max-width: 1200px) 320px, 320px"
+								src="/images/book/trame.png"
+								alt="Ombres sur le lac - Cliquez pour commander"
+								width={400}
+								height={600}
+								sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, (max-width: 1200px) 360px, 400px"
 								style={{ width: "auto", height: "auto" }}
-								className="w-60 sm:w-70 md:w-80 transition-all duration-500 group-hover:brightness-110"
+								className="w-70 sm:w-80 md:w-90 lg:w-100 transition-all duration-500 group-hover:brightness-110"
 							/>
 						</div>
 					</div>
@@ -89,7 +89,7 @@ export default function BookSection() {
 									Bruno est-il vraiment la victime que tout le monde imagine, ou
 									bien détient-il lui-même les clés du mystère ?
 								</p>
-								<p className="text-base md:text-lg leading-relaxed text-mountain-blue italic border-l-4 border-sunset-orange pl-4 md:pl-6">
+								<p className="text-base md:text-lg leading-relaxed text-mountain-blue italic border-l-4 border-red-600 pl-4 md:pl-6">
 									Entre secrets bien gardés et révélations inattendues, plongez
 									dans une enquête haletante où personne n'est vraiment
 									innocent.
@@ -102,8 +102,9 @@ export default function BookSection() {
 										e.stopPropagation();
 										navigateWithTransition("/boutique");
 									}}
-									className="bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white px-8 md:px-12 py-3 md:py-4 rounded-md button-hover shadow-lg font-medium text-base md:text-lg cursor-pointer">
-									Découvrir le livre
+									className="relative overflow-hidden bg-gradient-to-r from-gray-800 to-gray-900 text-white px-8 md:px-12 py-3 md:py-4 rounded-md button-hover shadow-lg font-medium text-base md:text-lg cursor-pointer group">
+									<div className="absolute inset-0 bg-gradient-to-r from-red-800 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"></div>
+									<span className="relative z-10">Découvrir le livre</span>
 								</button>
 							</div>
 						</div>

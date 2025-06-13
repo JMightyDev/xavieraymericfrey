@@ -25,16 +25,24 @@ export default function Biography() {
 					ref={photoRef as React.RefObject<HTMLDivElement>}
 					className={`mb-16 flex justify-center animate-on-scroll ${photoVisible ? "visible" : ""}`}
 					style={{ animationDelay: "0.1s" }}>
-					<div className="relative w-80 h-96 rounded-2xl overflow-hidden border-4 border-sunset-orange shadow-2xl transform hover:scale-105 transition-all duration-500">
+					<div className="relative w-80 h-96 rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-500 group">
+						{/* Cadre décoratif élégant avec effet glassmorphism */}
+						<div className="absolute inset-0 -inset-2 bg-gradient-to-br from-white/20 via-white/5 to-white/20 rounded-2xl blur-sm"></div>
+						<div className="absolute inset-0 bg-gradient-to-br from-red-600/10 via-transparent to-gray-800/10 rounded-2xl"></div>
+						<div className="absolute inset-0 border border-white/30 rounded-2xl group-hover:border-white/50 transition-all duration-500"></div>
+
 						<Image
 							src="/images/hero/xavier-portrait.png"
 							alt="Xavier Aymeric Frey"
 							fill
 							sizes="320px"
-							className="object-cover object-center"
+							className="object-cover object-center transition-all duration-500 group-hover:brightness-110"
 							style={{ objectPosition: "center 20%" }}
 							priority
 						/>
+
+						{/* Overlay subtil pour plus de profondeur */}
+						<div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 rounded-2xl"></div>
 					</div>
 				</div>
 
@@ -87,7 +95,7 @@ export default function Biography() {
 										width={250}
 										height={100}
 										sizes="250px"
-										className="hover:opacity-100 transition-all duration-500 hover:drop-shadow-lg"
+										className="hover:opacity-100 transition-all duration-500 hover:drop-shadow-lg rounded-lg"
 									/>
 								</div>
 							</div>

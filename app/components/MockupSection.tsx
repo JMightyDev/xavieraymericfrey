@@ -53,7 +53,7 @@ export default function MockupSection() {
 								</h3>
 
 								<div className="prose prose-base md:prose-lg">
-									<blockquote className="text-sm md:text-lg italic text-stone-gray leading-relaxed mb-4 md:mb-6 border-l-4 border-sunset-orange pl-4 md:pl-6">
+									<blockquote className="text-sm md:text-lg italic text-stone-gray leading-relaxed mb-4 md:mb-6 border-l-4 border-red-600 pl-4 md:pl-6">
 										« Les feux d'artifice explosaient au-dessus du lac d'Annecy
 										dans un fracas de lumière et de couleurs. Quarante mille
 										spectateurs levaient les yeux vers le ciel embrasé, mais
@@ -82,8 +82,9 @@ export default function MockupSection() {
 									</div>
 									<button
 										onClick={() => navigateWithTransition("/boutique")}
-										className="bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white px-4 md:px-6 py-2 rounded-md button-hover shadow-lg text-xs md:text-sm font-medium cursor-pointer">
-										Lire la suite
+										className="relative overflow-hidden bg-gradient-to-r from-gray-800 to-gray-900 text-white px-4 md:px-6 py-2 rounded-md button-hover shadow-lg text-xs md:text-sm font-medium cursor-pointer group">
+										<div className="absolute inset-0 bg-gradient-to-r from-red-800 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"></div>
+										<span className="relative z-10">Lire la suite</span>
 									</button>
 								</div>
 							</div>
@@ -92,12 +93,13 @@ export default function MockupSection() {
 							<div className="flex gap-4 md:gap-6 justify-center lg:justify-start flex-wrap mt-6 md:mt-8">
 								<button
 									onClick={() => navigateWithTransition("/boutique")}
-									className="bg-gradient-to-r from-sunset-orange to-lake-turquoise hover:from-lake-turquoise hover:to-sunset-orange text-white px-6 md:px-8 py-2 md:py-3 rounded-md button-hover shadow-lg font-medium text-sm md:text-base cursor-pointer">
-									Pré-commander
+									className="relative overflow-hidden bg-gradient-to-r from-gray-800 to-gray-900 text-white px-6 md:px-8 py-2 md:py-3 rounded-md button-hover shadow-lg font-medium text-sm md:text-base cursor-pointer group">
+									<div className="absolute inset-0 bg-gradient-to-r from-red-800 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"></div>
+									<span className="relative z-10">Pré-commander</span>
 								</button>
 								<button
 									onClick={() => navigateWithTransition("/auteur")}
-									className="border-2 border-lake-blue hover:bg-lake-blue/10 hover:border-lake-turquoise text-lake-blue hover:text-lake-turquoise px-6 md:px-8 py-2 md:py-3 rounded-md button-hover font-medium text-sm md:text-base cursor-pointer">
+									className="border-2 border-gray-800 hover:bg-gray-800/10 hover:border-red-600 text-gray-800 hover:text-red-600 px-6 md:px-8 py-2 md:py-3 rounded-md button-hover font-medium text-sm md:text-base cursor-pointer">
 									Découvrir l'auteur
 								</button>
 							</div>
