@@ -164,7 +164,7 @@ export default function Hero() {
 
 			<div className="container mx-auto px-4 pt-20 md:pt-24 lg:pt-32 pb-12 relative z-10 flex flex-col min-h-screen">
 				{/* Section auteur repositionnée en haut à gauche - carte de visite élégante */}
-				<div className="absolute top-20 left-6 z-20 hidden lg:block">
+				<div className="absolute top-20 left-6 z-10 hidden lg:block">
 					<div className="w-[420px]">
 						<div className="relative">
 							{/* Arrière-plan moderne avec effet glassmorphism renforcé */}

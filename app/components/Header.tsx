@@ -104,7 +104,7 @@ export default function Header() {
 
 				{/* Menu mobile */}
 				{isMenuOpen && (
-					<div className="md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-deep-night to-mountain-blue border-t border-red-600/30 shadow-xl z-[50]">
+					<div className="md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-deep-night to-mountain-blue border-t border-red-600/30 shadow-xl z-[70]">
 						<nav className="px-4 py-6 space-y-4">
 							{navigationItems.map((item) => (
 								<button
