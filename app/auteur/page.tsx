@@ -7,7 +7,7 @@ import Biography from "../components/Biography";
 
 export default function AuteurPage() {
 	return (
-		<div>
+		<div className="pt-16">
 			<style jsx>{`
 				@keyframes fadeInUp {
 					from {

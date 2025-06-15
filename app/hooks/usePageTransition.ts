@@ -16,7 +16,22 @@ export function usePageTransition() {
 
 			setIsTransitioning(true);
 
-			// Utilise la View Transition API native si disponible (Chrome 111+)
+			// Détection mobile pour optimiser les performances
+			const isMobile =
+				typeof window !== "undefined" &&
+				(window.innerWidth <= 768 ||
+					/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+						navigator.userAgent
+					));
+
+			// Sur mobile, navigation immédiate pour éviter les lenteurs
+			if (isMobile) {
+				router.push(href);
+				setIsTransitioning(false);
+				return;
+			}
+
+			// Utilise la View Transition API native si disponible (Chrome 111+) - desktop uniquement
 			if (typeof window !== "undefined" && "startViewTransition" in document) {
 				// @ts-ignore - View Transition API
 				document.startViewTransition(() => {
@@ -24,9 +39,9 @@ export function usePageTransition() {
 					setIsTransitioning(false);
 				});
 			} else {
-				// Fallback : transition douce avec fade simple
-				document.body.style.opacity = "0";
-				document.body.style.transition = "opacity 0.3s ease-in-out";
+				// Fallback desktop : transition douce avec fade simple
+				document.body.style.opacity = "0.7";
+				document.body.style.transition = "opacity 0.2s ease-in-out";
 
 				setTimeout(() => {
 					router.push(href);
@@ -38,9 +53,9 @@ export function usePageTransition() {
 						setTimeout(() => {
 							document.body.style.removeProperty("transition");
 							document.body.style.removeProperty("opacity");
-						}, 300);
+						}, 200);
 					}, 50);
-				}, 300);
+				}, 200);
 			}
 		},
 		[router]

@@ -133,7 +133,8 @@ export default function Header() {
 											navigateWithTransition(item.href);
 											setIsMenuOpen(false);
 										}}
-										className="block w-full text-left text-morning-mist hover:text-red-600 transition-colors duration-200 cursor-pointer font-medium py-2 px-2 rounded hover:bg-white/5">
+										onTouchStart={() => {}} // Optimisation mobile pour éviter le délai de 300ms
+										className="block w-full text-left text-morning-mist hover:text-red-600 transition-colors duration-200 cursor-pointer font-medium py-3 px-3 rounded hover:bg-white/5 active:bg-white/10 touch-manipulation">
 										{item.name}
 									</button>
 								))}

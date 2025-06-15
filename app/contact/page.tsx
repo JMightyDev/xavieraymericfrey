@@ -7,7 +7,7 @@ import ContactForm from "../components/ContactForm";
 
 export default function Contact() {
 	return (
-		<div>
+		<div className="pt-16">
 			<Header />
 			<style jsx>{`
 				@keyframes fadeInUp {

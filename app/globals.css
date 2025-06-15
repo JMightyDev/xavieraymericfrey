@@ -24,6 +24,32 @@
 /* Responsive design amélioré */
 html {
 	scroll-behavior: smooth;
+	/* Optimisations mobile pour la réactivité */
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* Optimisations spécifiques pour les interactions tactiles */
+button,
+a,
+[role="button"] {
+	-webkit-tap-highlight-color: transparent;
+	touch-action: manipulation;
+	user-select: none;
+}
+
+/* Amélioration de la réactivité des clics sur mobile */
+@media (pointer: coarse) {
+	button,
+	a,
+	[role="button"] {
+		min-height: 44px; /* Taille minimum recommandée pour les éléments tactiles */
+		min-width: 44px;
+	}
 }
 
 /* Mobile-first approach pour le texte */

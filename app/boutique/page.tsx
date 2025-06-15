@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function Shop() {
 	return (
-		<div>
+		<div className="pt-16">
 			<Header />
 			<main className="min-h-screen bg-white">
 				<div className="container mx-auto px-4 py-20">
