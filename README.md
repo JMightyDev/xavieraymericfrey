@@ -196,7 +196,7 @@ npm run lint    # Linter ESLint avec correction automatique
 
 ### Structure de fichiers
 
-```
+```text
 app/
 ├── components/          # Composants réutilisables
 ├── hooks/              # Hooks personnalisés
@@ -248,10 +248,10 @@ BREVO_LIST_ID=your_brevo_list_id_here
 
 ## 📞 Support & Développement
 
-**Développé par JMighty**
+## Développé par JMighty
 
 - Site web : [jmighty.fr](https://www.jmighty.fr)
-- Contact : contact@jmighty.fr
+- Contact : <contact@jmighty.fr>
 
 Pour toute question technique ou demande d'évolution, n'hésitez pas à me contacter.
 
