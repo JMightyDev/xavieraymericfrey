@@ -7,6 +7,20 @@ export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const { navigateWithTransition } = usePageTransition();
 
+	// Effet pour bloquer les interactions avec le contenu en arrière-plan
+	React.useEffect(() => {
+		if (isMenuOpen) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "unset";
+		}
+
+		// Cleanup
+		return () => {
+			document.body.style.overflow = "unset";
+		};
+	}, [isMenuOpen]);
+
 	const navigationItems = [
 		{ name: "Accueil", href: "/" },
 		{ name: "Boutique", href: "/boutique" },
@@ -104,37 +118,46 @@ export default function Header() {
 
 				{/* Menu mobile */}
 				{isMenuOpen && (
-					<div className="md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-deep-night to-mountain-blue border-t border-red-600/30 shadow-xl z-[70]">
-						<nav className="px-4 py-6 space-y-4">
-							{navigationItems.map((item) => (
-								<button
-									key={item.name}
-									onClick={() => {
-										navigateWithTransition(item.href);
-										setIsMenuOpen(false);
-									}}
-									className="block w-full text-left text-morning-mist hover:text-red-600 transition-colors duration-200 cursor-pointer font-medium py-2 px-2 rounded hover:bg-white/5">
-									{item.name}
-								</button>
-							))}
+					<>
+						{/* Overlay pour bloquer les interactions avec le contenu en arrière-plan */}
+						<div
+							className="md:hidden fixed inset-0 bg-black/50 z-[65]"
+							onClick={() => setIsMenuOpen(false)}></div>
 
-							{/* Réseaux sociaux mobile */}
-							<div className="flex items-center justify-center space-x-6 pt-4 border-t border-red-600/30">
-								<span className="text-sm text-morning-mist">Suivez-moi :</span>
-								{socialLinks.map((social) => (
-									<a
-										key={social.name}
-										href={social.href}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="text-morning-mist hover:text-red-600 transition-colors duration-200 cursor-pointer p-2"
-										title={social.name}>
-										{social.icon}
-									</a>
+						<div className="md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-deep-night to-mountain-blue border-t border-red-600/30 shadow-xl z-[70]">
+							<nav className="px-4 py-6 space-y-4">
+								{navigationItems.map((item) => (
+									<button
+										key={item.name}
+										onClick={() => {
+											navigateWithTransition(item.href);
+											setIsMenuOpen(false);
+										}}
+										className="block w-full text-left text-morning-mist hover:text-red-600 transition-colors duration-200 cursor-pointer font-medium py-2 px-2 rounded hover:bg-white/5">
+										{item.name}
+									</button>
 								))}
-							</div>
-						</nav>
-					</div>
+
+								{/* Réseaux sociaux mobile */}
+								<div className="flex items-center justify-center space-x-6 pt-4 border-t border-red-600/30">
+									<span className="text-sm text-morning-mist">
+										Suivez-moi :
+									</span>
+									{socialLinks.map((social) => (
+										<a
+											key={social.name}
+											href={social.href}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="text-morning-mist hover:text-red-600 transition-colors duration-200 cursor-pointer p-2"
+											title={social.name}>
+											{social.icon}
+										</a>
+									))}
+								</div>
+							</nav>
+						</div>
+					</>
 				)}
 			</div>
 		</header>
