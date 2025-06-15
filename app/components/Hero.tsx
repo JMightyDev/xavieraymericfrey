@@ -35,11 +35,11 @@ export default function Hero() {
 					backgroundPosition: "center",
 				}}></div>
 
-			{/* Overlay avec dégradé plus prononcé pour améliorer la lisibilité */}
-			<div className="absolute inset-0 bg-gradient-to-br from-lake-blue/50 via-mountain-blue/40 to-deep-night/70"></div>
+			{/* Overlay avec dégradé plus léger pour éclaircir l'image */}
+			<div className="absolute inset-0 bg-gradient-to-br from-lake-blue/30 via-mountain-blue/25 to-deep-night/45"></div>
 
 			{/* Effets décoratifs d'ambiance enrichis */}
-			<div className="absolute inset-0 opacity-15 pointer-events-none">
+			<div className="absolute inset-0 opacity-10 pointer-events-none">
 				<div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-br from-red-600 to-gray-800 rounded-full blur-3xl animate-pulse"></div>
 				<div
 					className="absolute bottom-32 right-16 w-48 h-48 bg-gradient-to-br from-gray-800 to-red-600 rounded-full blur-3xl animate-pulse"
@@ -56,7 +56,7 @@ export default function Hero() {
 			<div className="absolute top-1/3 left-0 right-0 bottom-0 overflow-hidden pointer-events-none">
 				{/* Ombre 1 - silhouette humaine grande qui traverse lentement */}
 				<div
-					className="absolute top-1/3 w-32 h-96 bg-black/35 rounded-full blur-xl opacity-70"
+					className="absolute top-1/3 w-32 h-96 bg-black/25 rounded-full blur-xl opacity-50"
 					style={{
 						animation: "shadowFloat1 25s ease-in-out infinite",
 						animationDelay: "0s",
@@ -64,7 +64,7 @@ export default function Hero() {
 
 				{/* Ombre 2 - silhouette humaine moyenne qui va dans l'autre sens */}
 				<div
-					className="absolute top-1/2 w-28 h-80 bg-black/30 rounded-full blur-lg opacity-65"
+					className="absolute top-1/2 w-28 h-80 bg-black/20 rounded-full blur-lg opacity-45"
 					style={{
 						animation: "shadowFloat2 30s ease-in-out infinite",
 						animationDelay: "12s",
@@ -72,7 +72,7 @@ export default function Hero() {
 
 				{/* Ombre 3 - silhouette humaine distante */}
 				<div
-					className="absolute top-2/5 w-24 h-64 bg-black/25 rounded-full blur-lg opacity-60"
+					className="absolute top-2/5 w-24 h-64 bg-black/15 rounded-full blur-lg opacity-40"
 					style={{
 						animation: "shadowFloat4 35s linear infinite",
 						animationDelay: "20s",
