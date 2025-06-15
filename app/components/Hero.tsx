@@ -35,8 +35,8 @@ export default function Hero() {
 					backgroundPosition: "center",
 				}}></div>
 
-			{/* Overlay avec dégradé plus léger pour éclaircir l'image */}
-			<div className="absolute inset-0 bg-gradient-to-br from-lake-blue/30 via-mountain-blue/25 to-deep-night/45"></div>
+			{/* Overlay avec dégradé encore plus léger pour plus de luminosité */}
+			<div className="absolute inset-0 bg-gradient-to-br from-lake-blue/20 via-mountain-blue/15 to-deep-night/35"></div>
 
 			{/* Effets décoratifs d'ambiance enrichis */}
 			<div className="absolute inset-0 opacity-10 pointer-events-none">
