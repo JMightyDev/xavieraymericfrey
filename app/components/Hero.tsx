@@ -314,7 +314,21 @@ export default function Hero() {
 											onClick={() => navigateWithTransition("/boutique")}
 											className="mt-6 md:mt-8 relative overflow-hidden bg-gradient-to-r from-gray-800 to-gray-900 text-white px-8 md:px-12 py-3 md:py-4 rounded-md button-hover shadow-lg font-medium text-base md:text-lg cursor-pointer group">
 											<div className="absolute inset-0 bg-gradient-to-r from-red-800 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"></div>
-											<span className="relative z-10">Pré-commander</span>
+											<span className="relative z-10 flex items-center gap-2 justify-center">
+												<svg
+													className="w-4 h-4 md:w-5 md:h-5"
+													fill="none"
+													stroke="currentColor"
+													viewBox="0 0 24 24">
+													<path
+														strokeLinecap="round"
+														strokeLinejoin="round"
+														strokeWidth={2}
+														d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+													/>
+												</svg>
+												Pré-commander
+											</span>
 										</button>
 									</div>
 								</div>
