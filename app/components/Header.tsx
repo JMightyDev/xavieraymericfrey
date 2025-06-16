@@ -60,13 +60,14 @@ export default function Header() {
 	];
 
 	return (
-		<header className="bg-gradient-to-r from-deep-night to-mountain-blue text-white shadow-lg fixed top-0 w-full z-[60]">
-			<div className="container mx-auto px-4">
+		<header className="bg-gradient-to-r from-deep-night to-mountain-blue text-white shadow-lg fixed top-0 w-full z-[100]">
+			<div className="container mx-auto px-4 relative z-[101]">
 				<div className="flex items-center justify-between h-16">
-					{/* Logo/Nom */}
+					{/* Logo/Nom - Optimisé pour mobile */}
 					<button
 						onClick={() => navigateWithTransition("/")}
-						className="text-lg sm:text-xl font-serif text-snow-white hover:text-red-600 transition-colors duration-200 cursor-pointer truncate">
+						onTouchStart={() => {}} // Optimisation mobile
+						className="relative z-[102] text-lg sm:text-xl font-serif text-snow-white hover:text-red-600 active:text-red-600 transition-colors duration-200 cursor-pointer truncate py-2 px-1 -mx-1 touch-manipulation min-w-0 flex-shrink">
 						Xavier Aymeric Frey
 					</button>
 
@@ -102,17 +103,18 @@ export default function Header() {
 						</div>
 					</nav>
 
-					{/* Menu burger mobile */}
+					{/* Menu burger mobile - Zone de clic agrandie */}
 					<button
 						onClick={() => setIsMenuOpen(!isMenuOpen)}
-						className="md:hidden flex flex-col justify-center items-center w-8 h-8 cursor-pointer p-1"
+						onTouchStart={() => {}} // Optimisation mobile
+						className="relative z-[102] md:hidden flex flex-col justify-center items-center w-10 h-10 cursor-pointer touch-manipulation hover:bg-white/10 active:bg-white/20 transition-all duration-200 rounded"
 						aria-label="Menu de navigation">
 						<span
-							className={`bg-snow-white block h-0.5 w-6 rounded transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-1.5" : ""}`}></span>
+							className={`bg-snow-white block h-0.5 w-6 rounded transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-1.5 bg-red-400" : ""}`}></span>
 						<span
 							className={`bg-snow-white block h-0.5 w-6 rounded my-1 transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""}`}></span>
 						<span
-							className={`bg-snow-white block h-0.5 w-6 rounded transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}></span>
+							className={`bg-snow-white block h-0.5 w-6 rounded transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-1.5 bg-red-400" : ""}`}></span>
 					</button>
 				</div>
 
@@ -121,10 +123,10 @@ export default function Header() {
 					<>
 						{/* Overlay pour bloquer les interactions avec le contenu en arrière-plan */}
 						<div
-							className="md:hidden fixed inset-0 bg-black/50 z-[65]"
+							className="md:hidden fixed inset-0 bg-black/50 z-[98]"
 							onClick={() => setIsMenuOpen(false)}></div>
 
-						<div className="md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-deep-night to-mountain-blue shadow-xl z-[70]">
+						<div className="md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-deep-night to-mountain-blue shadow-xl z-[99]">
 							<nav className="px-6 pt-4 pb-4 space-y-2">
 								{navigationItems.map((item) => (
 									<button

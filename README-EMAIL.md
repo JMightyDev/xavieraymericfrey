@@ -37,7 +37,7 @@ Dans votre projet Vercel :
 1. Allez dans **Settings** → **Environment Variables**
 2. Ajoutez ces variables :
 
-```
+```env
 BREVO_API_KEY=xkeysib-votre-cle-api-ici
 BREVO_LIST_ID=4
 ```
@@ -54,6 +54,7 @@ Pour que vos emails ne finissent pas en spam :
 2. Ajoutez `xavieraymericfrey.fr`
 3. Configurez les enregistrements DNS (SPF, DKIM) selon les instructions Brevo
 4. Modifiez les emails dans le code :
+
    ```javascript
    // Remplacer partout "xavieraymericfrey@gmail.com" par :
    from: "contact@xavieraymericfrey.fr";

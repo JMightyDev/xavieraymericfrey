@@ -163,29 +163,29 @@ export default function Hero() {
 			`}</style>
 
 			<div className="container mx-auto px-4 pt-12 md:pt-16 lg:pt-32 pb-12 relative z-10 flex flex-col min-h-screen">
-				{/* Section auteur repositionnée en haut à gauche - carte de visite élégante */}
-				<div className="absolute top-16 lg:top-20 left-6 z-10 hidden lg:block">
-					<div className="w-[420px]">
+				{/* Section auteur repositionnée en haut à gauche - carte de visite élégante - Desktop uniquement */}
+				<div className="absolute top-8 lg:top-12 left-2 z-10 hidden lg:block">
+					<div className="w-[360px]">
 						<div className="relative">
 							{/* Arrière-plan moderne avec effet glassmorphism renforcé */}
-							<div className="absolute -inset-4 bg-gradient-to-br from-white/8 via-white/12 to-white/6 backdrop-blur-md rounded-2xl border border-white/15 shadow-2xl"></div>
-							<div className="absolute -inset-4 bg-gradient-to-br from-red-600/8 via-transparent to-gray-800/8 rounded-2xl"></div>
+							<div className="absolute -inset-3 bg-gradient-to-br from-white/8 via-white/12 to-white/6 backdrop-blur-md rounded-xl border border-white/15 shadow-2xl"></div>
+							<div className="absolute -inset-3 bg-gradient-to-br from-red-600/8 via-transparent to-gray-800/8 rounded-xl"></div>
 
-							<div className="relative z-10 flex items-center gap-8 px-6 py-6">
-								{/* Photo de l'auteur avec cadre élégant - taille agrandie */}
+							<div className="relative z-10 flex items-center gap-6 px-5 py-5">
+								{/* Photo de l'auteur avec cadre élégant - taille réduite */}
 								<div className="flex-shrink-0 relative">
 									{/* Cadre décoratif moderne */}
-									<div className="absolute -inset-3 bg-gradient-to-br from-white/25 via-white/10 to-white/25 rounded-full blur-sm"></div>
-									<div className="absolute -inset-2 bg-gradient-to-br from-red-600/15 to-gray-800/15 rounded-full"></div>
+									<div className="absolute -inset-2 bg-gradient-to-br from-white/25 via-white/10 to-white/25 rounded-full blur-sm"></div>
+									<div className="absolute -inset-1 bg-gradient-to-br from-red-600/15 to-gray-800/15 rounded-full"></div>
 
-									{/* Photo avec bordure élégante - taille agrandie */}
-									<div className="relative w-28 h-28 rounded-full overflow-hidden border-2 border-white/25 shadow-xl transition-all duration-700 hover:scale-105 hover:border-white/40">
+									{/* Photo avec bordure élégante - taille réduite */}
+									<div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-white/25 shadow-xl transition-all duration-700 hover:scale-105 hover:border-white/40">
 										<div className="absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-white/8 rounded-full"></div>
 										<Image
 											src="/images/hero/xavier-portrait.png"
 											alt="Xavier Aymeric Frey"
 											fill
-											sizes="112px"
+											sizes="96px"
 											className="object-cover object-center scale-110 rounded-full transition-all duration-700 hover:scale-115"
 											style={{ objectPosition: "center 20%" }}
 											priority
@@ -194,28 +194,28 @@ export default function Hero() {
 								</div>
 
 								{/* Informations auteur - layout horizontal moderne */}
-								<div className="flex-1 space-y-3 pl-2">
+								<div className="flex-1 space-y-2 pl-1">
 									<div>
-										<h1 className="font-serif text-2xl text-snow-white font-bold tracking-wide leading-tight whitespace-nowrap">
+										<h1 className="font-serif text-xl text-snow-white font-bold tracking-wide leading-tight">
 											<span className="bg-gradient-to-r from-white via-white to-white/95 bg-clip-text text-transparent drop-shadow-lg">
 												Xavier Aymeric Frey
 											</span>
 										</h1>
 
 										{/* Ligne décorative sous le nom */}
-										<div className="w-20 h-0.5 bg-gradient-to-r from-red-600 via-red-500 to-transparent mt-3 rounded-full"></div>
+										<div className="w-16 h-0.5 bg-gradient-to-r from-red-600 via-red-500 to-transparent mt-2 rounded-full"></div>
 									</div>
 
-									<p className="text-morning-mist/95 text-base font-medium tracking-wide">
+									<p className="text-morning-mist/95 text-sm font-medium tracking-wide">
 										<span className="bg-gradient-to-r from-morning-mist/95 to-morning-mist/80 bg-clip-text text-transparent">
 											Auteur de thriller policier
 										</span>
 									</p>
 
 									{/* Badge ou élément décoratif supplémentaire */}
-									<div className="flex items-center gap-2 mt-3">
-										<div className="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div>
-										<span className="text-white/80 text-sm font-medium tracking-wider uppercase">
+									<div className="flex items-center gap-2 mt-2">
+										<div className="w-1.5 h-1.5 bg-red-600 rounded-full animate-pulse"></div>
+										<span className="text-white/80 text-xs font-medium tracking-wider uppercase">
 											Premier roman
 										</span>
 									</div>
@@ -333,6 +333,68 @@ export default function Hero() {
 											Pré-commander
 										</span>
 									</button>
+								</div>
+
+								{/* Carte de visite mobile - en dessous du livre */}
+								<div className="block lg:hidden mt-8 md:mt-12">
+									<div className="max-w-sm mx-auto">
+										<div className="relative">
+											{/* Arrière-plan moderne avec effet glassmorphism */}
+											<div className="absolute -inset-3 bg-gradient-to-br from-white/8 via-white/12 to-white/6 backdrop-blur-md rounded-xl border border-white/15 shadow-2xl"></div>
+											<div className="absolute -inset-3 bg-gradient-to-br from-red-600/8 via-transparent to-gray-800/8 rounded-xl"></div>
+
+											<div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 px-5 py-5">
+												{/* Photo de l'auteur */}
+												<div className="flex-shrink-0 relative">
+													{/* Cadre décoratif moderne */}
+													<div className="absolute -inset-2 bg-gradient-to-br from-white/25 via-white/10 to-white/25 rounded-full blur-sm"></div>
+													<div className="absolute -inset-1 bg-gradient-to-br from-red-600/15 to-gray-800/15 rounded-full"></div>
+
+													{/* Photo avec bordure élégante */}
+													<div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-white/25 shadow-xl transition-all duration-700 hover:scale-105 hover:border-white/40">
+														<div className="absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-white/8 rounded-full"></div>
+														<Image
+															src="/images/hero/xavier-portrait.png"
+															alt="Xavier Aymeric Frey"
+															fill
+															sizes="80px"
+															className="object-cover object-center scale-110 rounded-full transition-all duration-700 hover:scale-115"
+															style={{ objectPosition: "center 20%" }}
+															priority
+														/>
+													</div>
+												</div>
+
+												{/* Informations auteur - centré sur mobile */}
+												<div className="flex-1 text-center sm:text-left space-y-2">
+													<div>
+														<h2 className="font-serif text-lg sm:text-xl text-snow-white font-bold tracking-wide leading-tight">
+															<span className="bg-gradient-to-r from-white via-white to-white/95 bg-clip-text text-transparent drop-shadow-lg">
+																Xavier Aymeric Frey
+															</span>
+														</h2>
+
+														{/* Ligne décorative sous le nom */}
+														<div className="w-14 h-0.5 bg-gradient-to-r from-red-600 via-red-500 to-transparent mt-2 rounded-full mx-auto sm:mx-0"></div>
+													</div>
+
+													<p className="text-morning-mist/95 text-sm font-medium tracking-wide">
+														<span className="bg-gradient-to-r from-morning-mist/95 to-morning-mist/80 bg-clip-text text-transparent">
+															Auteur de thriller policier
+														</span>
+													</p>
+
+													{/* Badge ou élément décoratif supplémentaire */}
+													<div className="flex items-center justify-center sm:justify-start gap-2 mt-2">
+														<div className="w-1.5 h-1.5 bg-red-600 rounded-full animate-pulse"></div>
+														<span className="text-white/80 text-xs font-medium tracking-wider uppercase">
+															Premier roman
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

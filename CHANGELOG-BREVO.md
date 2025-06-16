@@ -34,15 +34,15 @@ Migration complète de Resend vers **Brevo uniquement** pour tous les envois d'e
 
 ## 🔧 Variables d'environnement
 
-### À supprimer de Vercel :
+### À supprimer de Vercel
 
-```
+```env
 RESEND_API_KEY=... (plus nécessaire)
 ```
 
-### À conserver/ajouter dans Vercel :
+### À conserver/ajouter dans Vercel
 
-```
+```env
 BREVO_API_KEY=xkeysib-votre-cle-api-ici
 BREVO_LIST_ID=4
 ```

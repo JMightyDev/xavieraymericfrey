@@ -108,8 +108,8 @@ export default function Footer() {
 
 				{/* Copyright avec style amélioré */}
 				<div className="border-t border-gradient-to-r from-transparent via-lake-blue/30 to-transparent pt-8">
-					<div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-						<p className="text-morning-mist text-sm">
+					<div className="flex flex-col items-center text-center space-y-3 md:flex-row md:justify-between md:items-center md:space-y-0 md:text-left">
+						<p className="text-morning-mist text-sm order-1 md:order-none">
 							© 2025 Xavier Aymeric Frey • Site créé par{" "}
 							<a
 								href="https://www.jmighty.fr"
@@ -119,7 +119,7 @@ export default function Footer() {
 								JMighty
 							</a>
 						</p>
-						<div className="flex items-center space-x-6 text-sm text-morning-mist">
+						<div className="flex items-center justify-center space-x-6 text-sm text-morning-mist order-2 md:order-none">
 							<span className="flex items-center">
 								<div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
 								Livre en cours d'écriture
