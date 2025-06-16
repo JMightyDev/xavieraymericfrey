@@ -53,7 +53,7 @@ export default function Header() {
 			href: "https://www.tiktok.com/@xavieraymericfrey",
 			icon: (
 				<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-					<path d="M12.5 0A12.5 12.5 0 0 0 0 12.5 12.5 12.5 0 0 0 12.5 25 12.5 12.5 0 0 0 25 12.5 12.5 12.5 0 0 0 12.5 0zm5.5 9.5c-1.6 0-3-1.2-3.4-2.8V15c0 2.8-2.2 5-5 5s-5-2.2-5-5 2.2-5 5-5h1v2.8H9.6c-1.3 0-2.2.9-2.2 2.2s.9 2.2 2.2 2.2 2.2-.9 2.2-2.2V0h2.8c.4 2.5 2.4 4.5 4.9 4.9v4.6z" />
+					<path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-.04-.1z" />
 				</svg>
 			),
 		},
@@ -124,8 +124,8 @@ export default function Header() {
 							className="md:hidden fixed inset-0 bg-black/50 z-[65]"
 							onClick={() => setIsMenuOpen(false)}></div>
 
-						<div className="md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-deep-night to-mountain-blue border-t border-red-600/30 shadow-xl z-[70]">
-							<nav className="px-4 py-6 space-y-4">
+						<div className="md:hidden absolute top-full left-0 w-full bg-gradient-to-r from-deep-night to-mountain-blue shadow-xl z-[70]">
+							<nav className="px-6 pt-4 pb-4 space-y-2">
 								{navigationItems.map((item) => (
 									<button
 										key={item.name}
@@ -134,27 +134,38 @@ export default function Header() {
 											setIsMenuOpen(false);
 										}}
 										onTouchStart={() => {}} // Optimisation mobile pour éviter le délai de 300ms
-										className="block w-full text-left text-morning-mist hover:text-red-600 transition-colors duration-200 cursor-pointer font-medium py-3 px-3 rounded hover:bg-white/5 active:bg-white/10 touch-manipulation">
+										className="block w-full text-center text-morning-mist hover:text-red-600 transition-all duration-150 cursor-pointer font-medium py-3 px-4 rounded-lg border border-white/20 hover:border-red-600/40 hover:bg-white/5 active:bg-red-600/20 active:border-red-600/60 active:text-white active:scale-[0.98] touch-manipulation">
 										{item.name}
 									</button>
 								))}
 
+								{/* Trait rouge de séparation avec marges agrandies et animation */}
+								<div className="mx-4 mt-6 mb-5 relative">
+									<div className="border-t border-red-600/60 animate-pulse"></div>
+									<div
+										className="absolute inset-0 border-t border-red-600/30 blur-sm animate-pulse"
+										style={{ animationDelay: "0.5s" }}></div>
+								</div>
+
 								{/* Réseaux sociaux mobile */}
-								<div className="flex items-center justify-center space-x-6 pt-4 border-t border-red-600/30">
-									<span className="text-sm text-morning-mist">
-										Suivez-moi :
-									</span>
-									{socialLinks.map((social) => (
-										<a
-											key={social.name}
-											href={social.href}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="text-morning-mist hover:text-red-600 transition-colors duration-200 cursor-pointer p-2"
-											title={social.name}>
-											{social.icon}
-										</a>
-									))}
+								<div className="flex items-center justify-center pb-2">
+									<div className="flex items-center justify-center space-x-8">
+										{socialLinks.map((social) => (
+											<a
+												key={social.name}
+												href={social.href}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="flex items-center justify-center w-12 h-12 bg-white/10 hover:bg-white/20 text-morning-mist hover:text-red-600 transition-all duration-150 cursor-pointer rounded-full border border-white/20 hover:border-red-600/40 hover:scale-110 active:bg-red-600/20 active:border-red-600/60 active:text-white active:scale-105"
+												title={social.name}>
+												<div className="w-6 h-6">
+													{React.cloneElement(social.icon, {
+														className: "w-6 h-6",
+													})}
+												</div>
+											</a>
+										))}
+									</div>
 								</div>
 							</nav>
 						</div>

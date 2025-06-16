@@ -251,7 +251,7 @@ BREVO_LIST_ID=your_brevo_list_id_here
 ## Développé par JMighty
 
 - Site web : [jmighty.fr](https://www.jmighty.fr)
-- Contact : <contact@jmighty.fr>
+- Contact : <xavieraymericfrey@gmail.com>
 
 Pour toute question technique ou demande d'évolution, n'hésitez pas à me contacter.
 

@@ -12,22 +12,22 @@ export default function Biography() {
 	const { navigateWithTransition } = usePageTransition();
 
 	return (
-		<section className="bg-gradient-to-b from-lake-blue/20 via-snow-white to-morning-mist/30 py-20">
+		<section className="bg-gradient-to-b from-lake-blue/20 via-snow-white to-morning-mist/30 py-8 md:py-16">
 			<div className="container mx-auto px-4">
 				<h2
 					ref={titleRef as React.RefObject<HTMLHeadingElement>}
-					className={`text-4xl font-serif text-center mb-12 text-mountain-blue font-bold animate-on-scroll ${titleVisible ? "visible" : ""}`}>
+					className={`text-3xl md:text-4xl font-serif text-center mb-8 md:mb-12 text-mountain-blue font-bold animate-on-scroll ${titleVisible ? "visible" : ""}`}>
 					À propos de l'auteur
 				</h2>
 
 				{/* Photo de l'auteur en haut - agrandie et rectangulaire */}
 				<div
 					ref={photoRef as React.RefObject<HTMLDivElement>}
-					className={`mb-16 flex justify-center animate-on-scroll ${photoVisible ? "visible" : ""}`}
+					className={`mb-10 md:mb-16 flex justify-center animate-on-scroll ${photoVisible ? "visible" : ""}`}
 					style={{ animationDelay: "0.1s" }}>
 					<div className="relative w-80 h-96 rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-500 group">
 						{/* Cadre décoratif élégant avec effet glassmorphism */}
-						<div className="absolute inset-0 -inset-2 bg-gradient-to-br from-white/20 via-white/5 to-white/20 rounded-2xl blur-sm"></div>
+						<div className="absolute -inset-2 bg-gradient-to-br from-white/20 via-white/5 to-white/20 rounded-2xl blur-sm"></div>
 						<div className="absolute inset-0 bg-gradient-to-br from-red-600/10 via-transparent to-gray-800/10 rounded-2xl"></div>
 						<div className="absolute inset-0 border border-white/30 rounded-2xl group-hover:border-white/50 transition-all duration-500"></div>
 

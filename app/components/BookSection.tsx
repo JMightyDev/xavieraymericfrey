@@ -38,17 +38,17 @@ export default function BookSection() {
 	return (
 		<section
 			data-section="book-about"
-			className="bg-gradient-to-b from-snow-white via-snow-white to-morning-mist/20 py-12 md:py-20">
+			className="bg-gradient-to-b from-snow-white via-snow-white to-morning-mist/20 pt-8 pb-4 md:py-16">
 			<div className="container mx-auto px-4">
 				<h2
 					ref={titleRef as React.RefObject<HTMLHeadingElement>}
-					className={`text-2xl md:text-4xl font-serif text-center mb-8 md:mb-16 text-mountain-blue font-bold animate-on-scroll ${titleVisible ? "visible" : ""}`}>
+					className={`text-2xl md:text-4xl font-serif text-center mb-6 md:mb-12 text-mountain-blue font-bold animate-on-scroll ${titleVisible ? "visible" : ""}`}>
 					À propos du livre
 				</h2>
 
 				<div
 					ref={contentRef as React.RefObject<HTMLDivElement>}
-					className={`flex flex-col lg:flex-row gap-8 md:gap-16 items-start max-w-6xl mx-auto animate-on-scroll ${contentVisible ? "visible" : ""}`}
+					className={`flex flex-col lg:flex-row gap-6 md:gap-12 items-start max-w-6xl mx-auto animate-on-scroll ${contentVisible ? "visible" : ""}`}
 					style={{ animationDelay: "0.2s" }}>
 					{/* Images du livre avec parallax subtil et hover - cliquable */}
 					<div className="flex-shrink-0 mx-auto lg:mx-0 lg:sticky lg:top-24">

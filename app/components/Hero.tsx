@@ -162,9 +162,9 @@ export default function Hero() {
 				}
 			`}</style>
 
-			<div className="container mx-auto px-4 pt-20 md:pt-24 lg:pt-32 pb-12 relative z-10 flex flex-col min-h-screen">
+			<div className="container mx-auto px-4 pt-12 md:pt-16 lg:pt-32 pb-12 relative z-10 flex flex-col min-h-screen">
 				{/* Section auteur repositionnée en haut à gauche - carte de visite élégante */}
-				<div className="absolute top-20 left-6 z-10 hidden lg:block">
+				<div className="absolute top-16 lg:top-20 left-6 z-10 hidden lg:block">
 					<div className="w-[420px]">
 						<div className="relative">
 							{/* Arrière-plan moderne avec effet glassmorphism renforcé */}
@@ -272,8 +272,8 @@ export default function Hero() {
 												alt="Ombres sur le lac - Couverture du livre - Cliquez pour accéder à la boutique"
 												width={360}
 												height={540}
-												sizes="(max-width: 640px) 288px, (max-width: 768px) 336px, (max-width: 1024px) 384px, 432px"
-												className="w-72 h-auto md:w-84 lg:w-96 xl:w-108 transition-all duration-1000"
+												sizes="(max-width: 640px) 240px, (max-width: 768px) 288px, (max-width: 1024px) 384px, 432px"
+												className="w-60 sm:w-72 md:w-84 lg:w-96 xl:w-108 transition-all duration-1000"
 												priority
 											/>
 											{/* Reflet subtil sur le livre */}

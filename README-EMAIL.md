@@ -1,48 +1,95 @@
-# Configuration de l'envoi d'emails
+# Configuration Email avec Brevo
 
-## État actuel
+Ce guide vous explique comment configurer **exclusivement Brevo** pour tous les envois d'emails de votre site (contact et newsletter).
 
-Le formulaire de contact fonctionne mais simule uniquement l'envoi d'email. Les données sont validées et traitées correctement, mais aucun email n'est réellement envoyé.
+## Pourquoi Brevo uniquement ?
 
-## Configuration pour la production
+- ✅ **Simplicité** : Une seule plateforme à gérer
+- ✅ **Économique** : 300 emails/jour gratuits (largement suffisant)
+- ✅ **Complet** : Gestion des contacts + envois transactionnels
+- ✅ **Une seule clé API** à configurer
 
-### Option 1: Resend (Recommandé)
+## Étape 1 : Créer un compte Brevo
 
-1. Créer un compte sur [resend.com](https://resend.com)
-2. Installer le package : `npm install resend`
-3. Ajouter la clé API dans `.env.local` :
+1. Allez sur [brevo.com](https://www.brevo.com/)
+2. Créez un compte gratuit
+3. Confirmez votre email
 
-   ```text
-   RESEND_API_KEY=re_xxxxxxxxx
-   ```
+## Étape 2 : Obtenir la clé API
 
-4. Décommenter et adapter le code dans `app/api/contact/route.ts`
+1. Connectez-vous à votre compte Brevo
+2. Allez dans **"Paramètres"** → **"Clés API"**
+3. Cliquez sur **"Générer une nouvelle clé API"**
+4. Donnez un nom (ex: "Site Web Xavier")
+5. Copiez la clé générée (format : `xkeysib-...`)
 
-### Option 2: SendGrid
+## Étape 3 : Créer une liste de contacts
 
-1. Créer un compte sur [sendgrid.com](https://sendgrid.com)
-2. Installer le package : `npm install @sendgrid/mail`
-3. Configurer la clé API dans `.env.local`
+1. Dans Brevo, allez dans **"Contacts"** → **"Listes"**
+2. Cliquez sur **"Créer une liste"**
+3. Nom : "Newsletter - Ombres sur le lac"
+4. Notez l'ID de la liste (numéro affiché dans l'URL ou les détails)
 
-### Option 3: NodeMailer + SMTP
+## Étape 4 : Configuration Vercel
 
-Pour utiliser un serveur SMTP (Gmail, Outlook, etc.) :
+Dans votre projet Vercel :
 
-```bash
-npm install nodemailer
-npm install @types/nodemailer
+1. Allez dans **Settings** → **Environment Variables**
+2. Ajoutez ces variables :
+
+```
+BREVO_API_KEY=xkeysib-votre-cle-api-ici
+BREVO_LIST_ID=4
 ```
 
-## Fichiers modifiés
+⚠️ **Important** : Remplacez `4` par l'ID réel de votre liste créée à l'étape 3.
 
-- `app/api/contact/route.ts` - API pour traiter les soumissions
-- `app/contact/page.tsx` - Formulaire interactif avec validation
-- Emails envoyés à : `contact@jmighty.fr`
+## Étape 5 : Configuration email expéditeur
 
-## Fonctionnalités actuelles
+Pour que vos emails ne finissent pas en spam :
 
-✅ Validation côté client et serveur
-✅ Messages d'erreur et de succès
-✅ États de chargement
-✅ Formulaire réactif et accessible
-⏳ Envoi d'email réel (à configurer)
+### Option A : Utiliser votre domaine existant (xavieraymericfrey.fr)
+
+1. Dans Brevo → **"Expéditeurs et IP"** → **"Domaines"**
+2. Ajoutez `xavieraymericfrey.fr`
+3. Configurez les enregistrements DNS (SPF, DKIM) selon les instructions Brevo
+4. Modifiez les emails dans le code :
+   ```javascript
+   // Remplacer partout "xavieraymericfrey@gmail.com" par :
+   from: "contact@xavieraymericfrey.fr";
+   ```
+
+### Option B : Garder Gmail (plus simple)
+
+- Gardez `xavieraymericfrey@gmail.com` comme configuré
+- Les emails peuvent finir en spam mais fonctionnent
+- Recommandé pour commencer
+
+## Test de fonctionnement
+
+1. Déployez sur Vercel avec les nouvelles variables
+2. Testez le formulaire de contact sur votre site
+3. Testez l'inscription newsletter
+4. Vérifiez dans Brevo :
+   - **"Journaux"** → **"Emails transactionnels"** pour voir les envois
+   - **"Contacts"** → **"Listes"** pour voir les nouveaux inscrits
+
+## Limites du plan gratuit Brevo
+
+- ✅ **300 emails/jour** (largement suffisant pour votre usage)
+- ✅ **Contacts illimités**
+- ✅ **Listes illimités**
+- ✅ **Templates d'emails**
+- ✅ **Statistiques détaillées**
+
+## Support
+
+Si vous avez des questions :
+
+1. Consultez la [documentation Brevo](https://developers.brevo.com/)
+2. Vérifiez les logs dans Vercel → Functions
+3. Contactez-moi si besoin
+
+---
+
+**Résumé** : Une seule plateforme (Brevo), une seule clé API, configuration simple et gratuite pour tous vos besoins email ! 🎉

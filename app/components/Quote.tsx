@@ -11,7 +11,7 @@ export default function Quote() {
 	const { navigateWithTransition } = usePageTransition();
 
 	return (
-		<section className="py-12 md:py-20 bg-gradient-to-b from-deep-night via-mountain-blue to-lake-blue/80 text-center relative overflow-hidden">
+		<section className="py-8 md:py-16 bg-gradient-to-b from-deep-night via-mountain-blue to-lake-blue/80 text-center relative overflow-hidden">
 			{/* Effets décoratifs de fond */}
 			<div className="absolute inset-0 opacity-10">
 				<div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-gradient-to-br from-red-600 to-gray-800 blur-3xl animate-pulse"></div>
@@ -25,7 +25,7 @@ export default function Quote() {
 				{/* Première citation avec cadre décoratif */}
 				<div
 					ref={quoteRef1 as React.RefObject<HTMLDivElement>}
-					className={`animate-on-scroll ${isVisible1 ? "visible" : ""} mb-16 relative`}>
+					className={`animate-on-scroll ${isVisible1 ? "visible" : ""} mb-10 md:mb-16 relative`}>
 					{/* Guillemets décoratifs */}
 					<div className="absolute -top-6 -left-4 md:-left-8 text-6xl md:text-8xl text-red-600/40 font-serif">
 						"
@@ -44,7 +44,7 @@ export default function Quote() {
 				</div>
 
 				{/* Séparateur décoratif */}
-				<div className="flex items-center justify-center mb-16">
+				<div className="flex items-center justify-center mb-10 md:mb-16">
 					<div className="h-px bg-gradient-to-r from-transparent via-red-600 to-transparent w-24 md:w-32"></div>
 					<div className="mx-4 w-3 h-3 rounded-full bg-red-600 animate-pulse"></div>
 					<div className="h-px bg-gradient-to-r from-transparent via-red-600 to-transparent w-24 md:w-32"></div>
@@ -53,7 +53,7 @@ export default function Quote() {
 				{/* Deuxième citation avec cadre décoratif */}
 				<div
 					ref={quoteRef2 as React.RefObject<HTMLDivElement>}
-					className={`animate-on-scroll ${isVisible2 ? "visible" : ""} mb-16 relative`}
+					className={`animate-on-scroll ${isVisible2 ? "visible" : ""} mb-10 md:mb-16 relative`}
 					style={{ animationDelay: "0.3s" }}>
 					{/* Guillemets décoratifs */}
 					<div className="absolute -top-6 -left-4 md:-left-8 text-6xl md:text-8xl text-red-600/40 font-serif">
@@ -73,7 +73,7 @@ export default function Quote() {
 				</div>
 
 				{/* Séparateur décoratif 2 */}
-				<div className="flex items-center justify-center mb-16">
+				<div className="flex items-center justify-center mb-10 md:mb-16">
 					<div className="h-px bg-gradient-to-r from-transparent via-red-600 to-transparent w-20 md:w-28"></div>
 					<div className="mx-4 flex space-x-1">
 						<div

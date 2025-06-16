@@ -22,10 +22,10 @@ export default function MockupSection() {
 	}, []);
 
 	return (
-		<section className="bg-gradient-to-b from-morning-mist/20 via-snow-white to-morning-mist/30 py-12 md:py-20">
+		<section className="bg-gradient-to-b from-morning-mist/20 via-snow-white to-morning-mist/30 pt-4 pb-8 md:py-16">
 			<div className="container mx-auto px-4">
 				<div className="max-w-6xl mx-auto">
-					<div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
+					<div className="grid lg:grid-cols-2 gap-6 md:gap-10 items-start">
 						{/* Image mockup - plus petite */}
 						<div
 							ref={imageRef as React.RefObject<HTMLDivElement>}

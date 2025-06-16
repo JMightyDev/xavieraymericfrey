@@ -49,12 +49,12 @@ export default function NewsletterPage() {
 			<Header />
 			<main className="min-h-screen bg-gradient-to-b from-snow-white via-morning-mist/10 to-lake-blue/5">
 				{/* Hero section pour la newsletter */}
-				<section className="bg-gradient-to-br from-mountain-blue to-deep-night text-white py-20">
+				<section className="bg-gradient-to-br from-mountain-blue to-deep-night text-white py-12 md:py-20">
 					<div className="container mx-auto px-4 text-center">
-						<h1 className="text-5xl md:text-6xl font-serif mb-6 text-snow-white animate-on-scroll">
+						<h1 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-4 md:mb-6 text-snow-white animate-on-scroll">
 							Newsletter
 						</h1>
-						<p className="text-xl md:text-2xl text-morning-mist max-w-2xl mx-auto leading-relaxed animate-on-scroll">
+						<p className="text-lg md:text-xl lg:text-2xl text-morning-mist max-w-2xl mx-auto leading-relaxed animate-on-scroll">
 							Restez informé(e) des dernières actualités, événements et sorties
 							de Xavier Aymeric Frey.
 						</p>
@@ -62,7 +62,7 @@ export default function NewsletterPage() {
 				</section>
 
 				{/* Section newsletter */}
-				<section className="py-20">
+				<section className="py-8 md:py-16">
 					<div className="container mx-auto px-4">
 						<div className="max-w-2xl mx-auto">
 							<div className="bg-snow-white/90 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-morning-mist/30 animate-on-scroll">
